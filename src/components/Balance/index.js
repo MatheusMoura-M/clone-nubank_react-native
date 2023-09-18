@@ -23,7 +23,7 @@ export default function Balance({ saldo, gastos }) {
         <Text style={styles.itemTitle}>Gastos</Text>
         <View style={styles.content}>
           <Text style={styles.currencySymbol}>R$</Text>
-          <Text style={styles.expenses}>{gastos}</Text>
+          <Text style={styles.expenses}>{`-${gastos}`}</Text>
         </View>
       </View>
     </MotiView>
