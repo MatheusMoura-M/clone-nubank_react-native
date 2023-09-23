@@ -3,7 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { MotiView } from "moti";
 
-export default function Balance({ saldo, gastos }) {
+type PropsBalance = {
+  saldo: string;
+  gastos: string;
+};
+
+const Balance = ({ saldo, gastos }: PropsBalance) => {
   return (
     <MotiView
       style={styles.container}
@@ -11,7 +16,7 @@ export default function Balance({ saldo, gastos }) {
       animate={{ rotateX: "0deg", opacity: 1 }}
       transition={{ type: "timing", delay: 300, duration: 900 }}
     >
-      <View style={styles.item}>
+      <View>
         <Text style={styles.itemTitle}>Saldo</Text>
         <View style={styles.content}>
           <Text style={styles.currencySymbol}>R$</Text>
@@ -19,7 +24,7 @@ export default function Balance({ saldo, gastos }) {
         </View>
       </View>
 
-      <View style={styles.item}>
+      <View>
         <Text style={styles.itemTitle}>Gastos</Text>
         <View style={styles.content}>
           <Text style={styles.currencySymbol}>R$</Text>
@@ -28,7 +33,7 @@ export default function Balance({ saldo, gastos }) {
       </View>
     </MotiView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -63,3 +68,5 @@ const styles = StyleSheet.create({
     color: "#e74c3c",
   },
 });
+
+export default Balance;

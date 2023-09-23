@@ -1,8 +1,8 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import Header from "../../components/Header";
-import Balance from "../../components/Balance";
-import Movements from "../../components/Movements";
-import Actions from "../../components/Actions";
+import Header from "@components/Header";
+import Balance from "@components/Balance";
+import Movements from "@components/Movements";
+import Actions from "@components/Actions";
 
 const list = [
   {
@@ -39,7 +39,7 @@ const calculateBalance = () => {
   let total = 0;
   list.map((item) => {
     if (item.type === 1) {
-      numberFormated = parseFloat(
+      const numberFormated = parseFloat(
         item.value.replace(/\./g, "").replace(",", ".")
       );
       total += numberFormated;
@@ -61,7 +61,7 @@ const calculateExpenses = () => {
   let total = 0;
   list.map((item) => {
     if (item.type === 0) {
-      numberFormated = parseFloat(
+      const numberFormated = parseFloat(
         item.value.replace(/\./g, "").replace(",", ".")
       );
       total += numberFormated;
@@ -81,7 +81,7 @@ const calculateExpenses = () => {
   return stringFormated;
 };
 
-export default Home = () => {
+const Home = () => {
   return (
     <View style={styles.container}>
       <Header name={"Matheus Moura"} />
@@ -116,3 +116,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 14,
   },
 });
+
+export default Home;

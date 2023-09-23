@@ -3,8 +3,20 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { MotiView, AnimatePresence, MotiText } from "moti";
 
-export default function Movements({ data }) {
-  const [showValue, setShowValue] = useState();
+type PropsData = {
+  id: number;
+  label: string;
+  value: string;
+  date: string;
+  type: number;
+};
+
+type PropsMovements = {
+  data: PropsData;
+};
+
+export default function Movements({ data }: PropsMovements) {
+  const [showValue, setShowValue] = useState<boolean>(false);
 
   return (
     <TouchableOpacity

@@ -1,20 +1,18 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, StatusBar, TouchableOpacity } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
 import { MotiView, MotiText } from "moti";
+
+type PropsHeader = {
+  name: string;
+};
 
 const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 22
   : 64;
 
-export default Header = ({ name }) => {
+const Header = ({ name }: PropsHeader) => {
   return (
     <View style={styles.container}>
       <MotiView
@@ -42,7 +40,8 @@ export default Header = ({ name }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#8000ff",
+    backgroundColor: "#5F259F",
+    // backgroundColor: "#820ad1",
     paddingTop: statusBarHeight,
     paddingHorizontal: 16,
     paddingBottom: 44,
@@ -68,3 +67,5 @@ const styles = StyleSheet.create({
     borderRadius: 44 / 2,
   },
 });
+
+export default Header;

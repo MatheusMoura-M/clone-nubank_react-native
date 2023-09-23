@@ -8,7 +8,7 @@ import {
 
 import { AntDesign } from "@expo/vector-icons";
 
-export default Actions = () => {
+const Actions = () => {
   return (
     <ScrollView
       style={styles.container}
@@ -78,3 +78,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+export default Actions;
