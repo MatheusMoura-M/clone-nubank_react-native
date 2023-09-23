@@ -3,6 +3,7 @@ import Header from "@components/Header";
 import Balance from "@components/Balance";
 import Movements from "@components/Movements";
 import Actions from "@components/Actions";
+import { Container, Title } from "./style";
 
 const list = [
   {
@@ -76,45 +77,28 @@ const calculateExpenses = () => {
     .replace("R$", "")
     .trim();
 
-  console.log(stringFormated);
-
   return stringFormated;
 };
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <Container>
       <Header name={"Matheus Moura"} />
 
       <Balance saldo={calculateBalance()} gastos={calculateExpenses()} />
 
       <Actions />
 
-      <Text style={styles.title}>Últimas movimentações</Text>
+      <Title>Últimas movimentações</Title>
       <FlatList
-        style={styles.list}
+        style={{ marginHorizontal: 14 }}
         data={list}
         keyExtractor={(item) => String(item.id)}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <Movements data={item} />}
       />
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fafafa",
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    margin: 14,
-  },
-  list: {
-    marginHorizontal: 14,
-  },
-});
 
 export default Home;

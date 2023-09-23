@@ -1,82 +1,45 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-
 import { AntDesign } from "@expo/vector-icons";
+import { ActionButton, AreaButton, Container, LabelButton } from "./style";
 
 const Actions = () => {
   return (
-    <ScrollView
-      style={styles.container}
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-    >
-      <TouchableOpacity style={styles.actionButton}>
-        <View style={styles.areaButton}>
+    <Container horizontal={true} showsHorizontalScrollIndicator={false}>
+      <ActionButton>
+        <AreaButton>
           <AntDesign name="addfolder" size={26} color={"#000"} />
-        </View>
-        <Text style={styles.labelButton}>Entradas</Text>
-      </TouchableOpacity>
+        </AreaButton>
+        <LabelButton>Entradas</LabelButton>
+      </ActionButton>
 
-      <TouchableOpacity style={styles.actionButton}>
-        <View style={styles.areaButton}>
+      <ActionButton>
+        <AreaButton>
           <AntDesign name="tagso" size={26} color={"#000"} />
-        </View>
-        <Text style={styles.labelButton}>Compras</Text>
-      </TouchableOpacity>
+        </AreaButton>
+        <LabelButton>Compras</LabelButton>
+      </ActionButton>
 
-      <TouchableOpacity style={styles.actionButton}>
-        <View style={styles.areaButton}>
+      <ActionButton>
+        <AreaButton>
           <AntDesign name="creditcard" size={26} color={"#000"} />
-        </View>
-        <Text style={styles.labelButton}>Carteira</Text>
-      </TouchableOpacity>
+        </AreaButton>
+        <LabelButton>Carteira</LabelButton>
+      </ActionButton>
 
-      <TouchableOpacity style={styles.actionButton}>
-        <View style={styles.areaButton}>
+      <ActionButton>
+        <AreaButton>
           <AntDesign name="barcode" size={26} color={"#000"} />
-        </View>
-        <Text style={styles.labelButton}>Boletos</Text>
-      </TouchableOpacity>
+        </AreaButton>
+        <LabelButton>Boletos</LabelButton>
+      </ActionButton>
 
-      <TouchableOpacity style={styles.actionButton}>
-        <View style={styles.areaButton}>
+      <ActionButton>
+        <AreaButton>
           <AntDesign name="setting" size={26} color={"#000"} />
-        </View>
-        <Text style={styles.labelButton}>Conta</Text>
-      </TouchableOpacity>
-    </ScrollView>
+        </AreaButton>
+        <LabelButton>Conta</LabelButton>
+      </ActionButton>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    maxHeight: 84,
-    marginBottom: 14,
-    marginTop: 18,
-    paddingHorizontal: 14,
-  },
-  actionButton: {
-    alignItems: "center",
-    marginRight: 32,
-  },
-  areaButton: {
-    backgroundColor: "#ecf0f1",
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  labelButton: {
-    marginTop: 4,
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-});
 
 export default Actions;

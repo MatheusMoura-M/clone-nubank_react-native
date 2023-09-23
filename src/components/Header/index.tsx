@@ -1,8 +1,7 @@
 import React from "react";
-import { View, StyleSheet, StatusBar, TouchableOpacity } from "react-native";
-
+import { Container, Content, Username, ButtonUser } from "./style";
 import { Feather } from "@expo/vector-icons";
-import { MotiView, MotiText } from "moti";
+import { StatusBar } from "react-native";
 
 type PropsHeader = {
   name: string;
@@ -14,58 +13,26 @@ const statusBarHeight = StatusBar.currentHeight
 
 const Header = ({ name }: PropsHeader) => {
   return (
-    <View style={styles.container}>
-      <MotiView
-        style={styles.content}
+    <Container statusBarHeight={statusBarHeight}>
+      <Content
         from={{ translateY: -150, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
         transition={{ type: "timing", duration: 800, delay: 300 }}
       >
-        <MotiText
-          style={styles.username}
+        <Username
           from={{ translateX: -300 }}
           animate={{ translateX: 0 }}
           transition={{ type: "timing", duration: 800, delay: 800 }}
         >
           {name}
-        </MotiText>
+        </Username>
 
-        <TouchableOpacity activeOpacity={0.9} style={styles.buttonUser}>
+        <ButtonUser activeOpacity={0.9}>
           <Feather name="user" size={27} color={"#fff"} />
-        </TouchableOpacity>
-      </MotiView>
-    </View>
+        </ButtonUser>
+      </Content>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#5F259F",
-    // backgroundColor: "#820ad1",
-    paddingTop: statusBarHeight,
-    paddingHorizontal: 16,
-    paddingBottom: 44,
-    flexDirection: "row",
-  },
-  content: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    flexDirection: "row",
-  },
-  username: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  buttonUser: {
-    width: 44,
-    height: 44,
-    backgroundColor: "rgba(255,255,255,0.5)",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 44 / 2,
-  },
-});
 
 export default Header;
