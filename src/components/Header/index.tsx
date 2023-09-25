@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Content, Username, ButtonUser } from "./style";
 import { Feather } from "@expo/vector-icons";
-import { StatusBar } from "react-native";
+import { StatusBar, Image } from "react-native";
 
 type PropsHeader = {
   name: string;
@@ -19,6 +19,14 @@ const Header = ({ name }: PropsHeader) => {
         animate={{ translateY: 0, opacity: 1 }}
         transition={{ type: "timing", duration: 800, delay: 300 }}
       >
+        <ButtonUser activeOpacity={0.9}>
+          {/* <Feather name="user" size={27} color={"#fff"} /> */}
+          <Image
+            source={require("../../assets/Aspect-ratio.jpg")}
+            style={{ width: 44, height: 44, borderRadius: 22 }}
+          />
+        </ButtonUser>
+
         <Username
           from={{ translateX: -300 }}
           animate={{ translateX: 0 }}
@@ -26,10 +34,6 @@ const Header = ({ name }: PropsHeader) => {
         >
           {name}
         </Username>
-
-        <ButtonUser activeOpacity={0.9}>
-          <Feather name="user" size={27} color={"#fff"} />
-        </ButtonUser>
       </Content>
     </Container>
   );

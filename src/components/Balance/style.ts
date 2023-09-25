@@ -4,16 +4,16 @@ import { MotiView } from "moti";
 export const Container = styled(MotiView)`
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 18px;
-  padding-right: 18px;
-  margin-top: -24px;
-  background-color: #fff;
-  margin-left: 14px;
-  margin-right: 14px;
-  border-radius: 4px;
   padding-top: 22px;
   padding-bottom: 22px;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: #fff;
+  border-radius: 4px;
   z-index: 99;
+  /* margin-left: 14px; */
+  /* margin-top: -24px; */
+  /* margin-right: 14px; */
 `;
 
 export const ItemTitle = styled.Text`

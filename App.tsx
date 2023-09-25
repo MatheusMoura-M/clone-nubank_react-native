@@ -1,5 +1,5 @@
 // import "react-native-reanimated";
-import { useColorScheme } from "react-native";
+import { StatusBar, useColorScheme } from "react-native";
 
 import Home from "@screens/Home";
 
@@ -12,6 +12,11 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <Home />
     </ThemeProvider>
   );

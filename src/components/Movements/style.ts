@@ -27,8 +27,7 @@ export const Content = styled.View`
 `;
 
 export const DateText = styled.Text`
-  /* color: #dadada; */
-  color: ${(props) => props.theme.COLORS.WHITE};
+  color: #dadada;
   font-weight: bold;
 `;
 

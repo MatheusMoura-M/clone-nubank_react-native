@@ -10,7 +10,5 @@
       "@screens/*": ["./src/screens/*"],
       "@utils/*": ["./src/utils/*"]
     }
-    // "typeRoots": ["node_modules/@types", "./src/@types"],
-    // "types": ["@types/styled-components-react-native"]
   }
 }
