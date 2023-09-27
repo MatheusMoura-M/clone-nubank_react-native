@@ -15,6 +15,13 @@ type LashProps = {
   transformRotate: number;
 };
 
+type IconCircleProps = {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+};
+
 export const Container = styled.View<ContainerProps>`
   background-color: #820ad1;
   padding-top: ${({ statusBarHeight }) => statusBarHeight - 10}px;
@@ -35,10 +42,11 @@ export const BoxStart = styled.View`
 export const BoxEnd = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex;
+  justify-content: flex-end;
   gap: 25px;
   padding-top: 14px;
+  padding-right: 36px;
+  /* background-color: burlywood; */
 `;
 
 export const IconContainer = styled.View<IconContainerProps>`
@@ -60,12 +68,12 @@ export const IconEye = styled.View`
   position: relative;
 `;
 
-export const IconEyeCircle = styled.View`
+export const IconEyeCircle = styled.View<IconCircleProps>`
   position: absolute;
-  top: 9px;
-  left: 7.8px;
-  width: 8px;
-  height: 8px;
+  top: ${({ top }) => top}px;
+  left: ${({ left }) => left}px;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   border: 2px solid white;
   border-radius: 5px;
 `;
@@ -94,6 +102,15 @@ export const Lash = styled.View<LashProps>`
   height: 2px;
   background-color: white;
   transform: rotate(${({ transformRotate }) => transformRotate}deg);
+`;
+
+export const CurvedLine = styled.View`
+  width: 6px;
+  height: 7px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-top-left-radius: 30px;
+  border-color: white;
 `;
 
 export const Username = styled(MotiText)`

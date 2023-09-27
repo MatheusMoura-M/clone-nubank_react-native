@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatusBar, TouchableWithoutFeedback } from "react-native";
+import { StatusBar, TouchableWithoutFeedback, View } from "react-native";
 import {
   Container,
   Content,
@@ -15,12 +15,14 @@ import {
   Lashes,
   Lash,
   IconContainer,
+  CurvedLine,
 } from "./style";
 
 import * as ImagePicker from "expo-image-picker";
 import ImageViewer from "@components/ImageViewer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type PropsHeader = {
   name: string;
@@ -80,7 +82,7 @@ const Header = ({ name }: PropsHeader) => {
                 <IconEyeBox>
                   <IconEye />
                 </IconEyeBox>
-                <IconEyeCircle />
+                <IconEyeCircle top={9} left={7.8} width={8} height={8} />
               </IconContainer>
             ) : (
               <IconContainer paddingTop={7}>
@@ -96,6 +98,19 @@ const Header = ({ name }: PropsHeader) => {
           </TouchableWithoutFeedback>
 
           <FontAwesome5 name="question-circle" size={22} color="white" />
+
+          <IconContainer paddingTop={13}>
+            <IconEyeCircle top={1} left={3} width={10} height={10} />
+
+            <CurvedLine />
+            <MaterialCommunityIcons
+              name="email-outline"
+              size={12}
+              color="white"
+              top={-10}
+              right={-7}
+            />
+          </IconContainer>
         </BoxEnd>
       </Content>
     </Container>
