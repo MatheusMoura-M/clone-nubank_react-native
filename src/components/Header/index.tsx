@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StatusBar, TouchableWithoutFeedback } from "react-native";
 import {
   Container,
   Content,
@@ -7,14 +8,19 @@ import {
   BoxEnd,
   BoxStart,
   IconEye,
-  IconEyeContainer,
+  IconEyeBox,
   IconEyeCircle,
   Text,
+  EyeClosed,
+  Lashes,
+  Lash,
+  IconContainer,
 } from "./style";
-import { StatusBar, View } from "react-native";
 
 import * as ImagePicker from "expo-image-picker";
 import ImageViewer from "@components/ImageViewer";
+
+import { FontAwesome5 } from "@expo/vector-icons";
 
 type PropsHeader = {
   name: string;
@@ -22,6 +28,7 @@ type PropsHeader = {
 
 const Header = ({ name }: PropsHeader) => {
   const [selectedImage, setSelectedImage] = useState<string>("");
+  const [visibleValues, setVisibleValues] = useState<boolean>(true);
 
   const statusBarHeight = StatusBar.currentHeight
     ? StatusBar.currentHeight + 22
@@ -64,12 +71,31 @@ const Header = ({ name }: PropsHeader) => {
         </BoxStart>
 
         <BoxEnd>
-          <View>
-            <IconEyeContainer>
-              <IconEye />
-            </IconEyeContainer>
-            <IconEyeCircle />
-          </View>
+          <TouchableWithoutFeedback
+            onPress={() => setVisibleValues(!visibleValues)}
+            style={{ minWidth: 23 }}
+          >
+            {visibleValues ? (
+              <IconContainer paddingTop={5}>
+                <IconEyeBox>
+                  <IconEye />
+                </IconEyeBox>
+                <IconEyeCircle />
+              </IconContainer>
+            ) : (
+              <IconContainer paddingTop={7}>
+                <EyeClosed>
+                  <Lashes />
+                </EyeClosed>
+                <Lash top={10} left={0} transformRotate={-45} />
+                <Lash top={14.4} left={6.5} transformRotate={-70} />
+                <Lash top={14.4} left={15} transformRotate={-115} />
+                <Lash top={11} left={20.5} transformRotate={40} />
+              </IconContainer>
+            )}
+          </TouchableWithoutFeedback>
+
+          <FontAwesome5 name="question-circle" size={22} color="white" />
         </BoxEnd>
       </Content>
     </Container>

@@ -1,9 +1,19 @@
 import styled from "styled-components/native";
 import { MotiView, MotiText } from "moti";
 
-interface ContainerProps {
+type ContainerProps = {
   statusBarHeight: number;
-}
+};
+
+type IconContainerProps = {
+  paddingTop: number;
+};
+
+type LashProps = {
+  top: number;
+  left: number;
+  transformRotate: number;
+};
 
 export const Container = styled.View<ContainerProps>`
   background-color: #820ad1;
@@ -14,23 +24,31 @@ export const Container = styled.View<ContainerProps>`
 export const Content = styled(MotiView)`
   flex: 1;
   flex-direction: row;
-  /* background-color: #000; */
 `;
 
 export const BoxStart = styled.View`
   flex: 1;
   justify-content: space-between;
   flex-direction: column;
-  /* background-color: #000; */
 `;
 
 export const BoxEnd = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
-  /* background-color: red; */
-  padding-top: 16px;
+  align-items: flex;
+  gap: 25px;
+  padding-top: 14px;
+`;
+
+export const IconContainer = styled.View<IconContainerProps>`
+  padding-top: ${({ paddingTop }) => paddingTop}px;
+`;
+
+// Icon Eye-on
+export const IconEyeBox = styled.View`
+  height: 8px;
+  overflow: hidden;
 `;
 
 export const IconEye = styled.View`
@@ -42,19 +60,40 @@ export const IconEye = styled.View`
   position: relative;
 `;
 
-export const IconEyeContainer = styled.View`
-  height: 8px;
-  overflow: hidden;
-`;
-
 export const IconEyeCircle = styled.View`
   position: absolute;
-  top: 4px;
-  left: 7.5px;
+  top: 9px;
+  left: 7.8px;
   width: 8px;
   height: 8px;
   border: 2px solid white;
   border-radius: 5px;
+`;
+
+// Icon Eye-off
+export const EyeClosed = styled.View`
+  position: relative;
+  width: 23px;
+  height: 18px;
+  overflow: hidden;
+`;
+
+export const Lashes = styled.View`
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50px;
+  border-top-width: 0;
+  width: 24px;
+  height: 30px;
+  bottom: 10px;
+`;
+
+export const Lash = styled.View<LashProps>`
+  position: absolute;
+  width: 2.5px;
+  height: 2px;
+  background-color: white;
+  transform: rotate(${({ transformRotate }) => transformRotate}deg);
 `;
 
 export const Username = styled(MotiText)`
