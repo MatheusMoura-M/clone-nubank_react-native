@@ -103,6 +103,7 @@ const Header = ({ name }: PropsHeader) => {
             <IconEyeCircle top={1} left={3} width={10} height={10} />
 
             <CurvedLine />
+
             <MaterialCommunityIcons
               name="email-outline"
               size={12}

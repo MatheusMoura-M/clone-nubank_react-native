@@ -13,9 +13,20 @@ export default {
     GRAY_100: "#FAFAFA",
   },
   FONT_FAMILY: {
-    REGULAR: "Roboto_400Regular",
-    MEDIUM: "Roboto_500Medium",
-    BOLD: "Roboto_700Bold",
+    ROBOTO: {
+      REGULAR: "Roboto_400Regular",
+      MEDIUM: "Roboto_500Medium",
+      BOLD: "Roboto_700Bold",
+    },
+    GRAPHIK: {
+      LIGHT: "GraphikLight",
+      REGULAR: "GraphikRegular",
+      MEDIUM: "GraphikMedium",
+      SEMIBOLD: "GraphikSemibold",
+      BOLD: "GraphikBold",
+      BLACK: "GraphikBlack",
+      SUPER: "GraphikSuper",
+    },
   },
   FONT_SIZE: {
     XS: 12,

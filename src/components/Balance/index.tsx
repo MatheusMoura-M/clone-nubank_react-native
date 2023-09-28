@@ -4,10 +4,11 @@ import {
   Container,
   ItemTitle,
   Content,
-  CurrencySymbol,
   BalanceText,
-  ExpensesText,
+  ClickableContainer,
 } from "./style";
+
+import { MaterialIcons } from "@expo/vector-icons";
 
 type PropsBalance = {
   saldo: string;
@@ -16,27 +17,23 @@ type PropsBalance = {
 
 const Balance = ({ saldo, gastos }: PropsBalance) => {
   return (
-    <Container
-      from={{ rotateX: "-100deg", opacity: 0 }}
-      animate={{ rotateX: "0deg", opacity: 1 }}
-      transition={{ type: "timing", delay: 300, duration: 900 }}
-    >
-      <View>
-        <ItemTitle>Saldo</ItemTitle>
-        <Content>
-          <CurrencySymbol>R$</CurrencySymbol>
-          <BalanceText>{saldo}</BalanceText>
-        </Content>
-      </View>
+    <ClickableContainer>
+      <Container
+        from={{ rotateX: "-100deg", opacity: 0 }}
+        animate={{ rotateX: "0deg", opacity: 1 }}
+        transition={{ type: "timing", delay: 300, duration: 900 }}
+      >
+        <View>
+          <ItemTitle>Conta</ItemTitle>
+          <Content>
+            <BalanceText>R$ {saldo}</BalanceText>
+            {/* <BalanceText>R$ 73,84</BalanceText> */}
+          </Content>
+        </View>
 
-      <View>
-        <ItemTitle>Gastos</ItemTitle>
-        <Content>
-          <CurrencySymbol>R$</CurrencySymbol>
-          <ExpensesText>{`-${gastos}`}</ExpensesText>
-        </Content>
-      </View>
-    </Container>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#696767" />
+      </Container>
+    </ClickableContainer>
   );
 };
 
