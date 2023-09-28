@@ -46,7 +46,6 @@ export const BoxEnd = styled.View`
   gap: 25px;
   padding-top: 14px;
   padding-right: 36px;
-  /* background-color: burlywood; */
 `;
 
 export const IconContainer = styled.View<IconContainerProps>`
@@ -122,7 +121,7 @@ export const Username = styled(MotiText)`
 `;
 
 export const Text = styled.Text`
-  font-family: ${({ theme }) => theme.FONT_FAMILY.MEDIUM};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
 `;
 
 export const ButtonUser = styled.TouchableOpacity`

@@ -1,45 +1,115 @@
-import { AntDesign } from "@expo/vector-icons";
-import { ActionButton, AreaButton, Container, LabelButton } from "./style";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  ActionButton,
+  AreaButton,
+  BottomRectanglePadlock,
+  BoxBarCode,
+  BoxPadlock,
+  BoxPhone,
+  BoxTransfer,
+  Container,
+  HorizontalLinePadlock,
+  HorizontalLinePhone,
+  IconContainerPadlock,
+  IconTransfer,
+  IconWrapperPadlock,
+  LabelButton,
+  LabelButtonRecharge,
+} from "./style";
+import { Image } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
-const Actions = () => {
-  return (
-    <Container horizontal={true} showsHorizontalScrollIndicator={false}>
-      <ActionButton>
-        <AreaButton>
-          <AntDesign name="addfolder" size={26} color={"#000"} />
-        </AreaButton>
-        <LabelButton>Entradas</LabelButton>
-      </ActionButton>
+const Actions = () => (
+  <Container horizontal={true} showsHorizontalScrollIndicator={false}>
+    <ActionButton marginRight={11}>
+      <AreaButton>
+        <Image
+          source={require("../../assets/pix.png")}
+          style={{ width: 25, height: 25 }}
+        />
+      </AreaButton>
+      <LabelButton>Área Pix</LabelButton>
+    </ActionButton>
 
-      <ActionButton>
-        <AreaButton>
-          <AntDesign name="tagso" size={26} color={"#000"} />
-        </AreaButton>
-        <LabelButton>Compras</LabelButton>
-      </ActionButton>
+    <ActionButton marginRight={11}>
+      <AreaButton flexDirection="row">
+        <BoxBarCode width={3} />
+        <BoxBarCode />
+        <BoxBarCode width={3} />
+        <BoxBarCode />
+      </AreaButton>
+      <LabelButton>Pagar</LabelButton>
+    </ActionButton>
 
-      <ActionButton>
-        <AreaButton>
-          <AntDesign name="creditcard" size={26} color={"#000"} />
-        </AreaButton>
-        <LabelButton>Carteira</LabelButton>
-      </ActionButton>
+    <ActionButton marginRight={11}>
+      <AreaButton>
+        <BoxTransfer>
+          <IconTransfer />
 
-      <ActionButton>
-        <AreaButton>
-          <AntDesign name="barcode" size={26} color={"#000"} />
-        </AreaButton>
-        <LabelButton>Boletos</LabelButton>
-      </ActionButton>
+          <FontAwesome
+            name="arrow-up"
+            size={10}
+            color="black"
+            style={{
+              position: "absolute",
+              top: 7,
+              left: 12,
+              backgroundColor: "#ecf0f1",
+            }}
+          />
+        </BoxTransfer>
+      </AreaButton>
+      <LabelButton marginRight={3}>Transferir</LabelButton>
+    </ActionButton>
 
-      <ActionButton>
-        <AreaButton>
-          <AntDesign name="setting" size={26} color={"#000"} />
-        </AreaButton>
-        <LabelButton>Conta</LabelButton>
-      </ActionButton>
-    </Container>
-  );
-};
+    <ActionButton marginRight={11}>
+      <AreaButton>
+        <BoxPhone>
+          <HorizontalLinePhone />
+        </BoxPhone>
+      </AreaButton>
+      <LabelButtonRecharge>Recarga de celular</LabelButtonRecharge>
+    </ActionButton>
+
+    <ActionButton marginRight={11}>
+      <AreaButton>
+        <BoxPadlock>
+          <IconWrapperPadlock>
+            <IconContainerPadlock />
+          </IconWrapperPadlock>
+          <FontAwesome
+            name="dollar"
+            size={12}
+            color="black"
+            style={{ position: "absolute", right: 6, top: -0.4 }}
+          />
+          <HorizontalLinePadlock />
+          <BottomRectanglePadlock />
+        </BoxPadlock>
+      </AreaButton>
+      <LabelButton marginLeft={3}>Caixinhas</LabelButton>
+    </ActionButton>
+
+    <ActionButton marginRight={11}>
+      <AreaButton></AreaButton>
+      <LabelButton>Recarga</LabelButton>
+    </ActionButton>
+
+    <ActionButton marginRight={11}>
+      <AreaButton></AreaButton>
+      <LabelButton>Recarga</LabelButton>
+    </ActionButton>
+
+    <ActionButton marginRight={11}>
+      <AreaButton></AreaButton>
+      <LabelButton>Recarga</LabelButton>
+    </ActionButton>
+
+    <ActionButton marginRight={55}>
+      <AreaButton></AreaButton>
+      <LabelButton>Ultimo</LabelButton>
+    </ActionButton>
+  </Container>
+);
 
 export default Actions;
