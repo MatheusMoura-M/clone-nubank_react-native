@@ -10,8 +10,13 @@ type AreaButtonProps = {
   flexDirection?: DirectionVariant;
 };
 
-type BarcodeProps = {
+type LinesProps = {
   width?: number;
+  height?: number;
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
 };
 
 type LabelButtonProps = {
@@ -61,10 +66,10 @@ export const LabelButtonRecharge = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
 `;
 
-// ICON BARCODE
-export const BoxBarCode = styled.View<BarcodeProps>`
+// ICON LINES
+export const BoxLines = styled.View<LinesProps>`
   width: ${({ width }) => (width ? width : 4)}px;
-  height: 9px;
+  height: ${({ height }) => (height ? height : 9)}px;
   background-color: black;
   margin-right: 1.5px;
 `;
@@ -143,4 +148,12 @@ export const BottomRectanglePadlock = styled.View`
   border-width: 2px;
   border-top-width: 0;
   background-color: #ecf0f1;
+`;
+
+// ICON NETOWORK
+export const BoxLinesNetwork = styled.View<LinesProps>`
+  width: ${({ width }) => (width ? width : 4)}px;
+  height: ${({ height }) => (height ? height : 9)}px;
+  background-color: black;
+  position: absolute;
 `;
