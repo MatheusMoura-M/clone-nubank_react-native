@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { MotiView } from "moti";
 
 export const ClickableContainer = styled.TouchableOpacity``;
@@ -31,4 +32,10 @@ export const BalanceText = styled.Text`
   color: #000;
   margin-top: 3px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
+`;
+
+export const IconFontAwesome5 = styled(FontAwesome5).attrs(({ theme }) => ({
+  color: theme.COLORS.BLACK,
+}))`
+  position: absolute;
 `;

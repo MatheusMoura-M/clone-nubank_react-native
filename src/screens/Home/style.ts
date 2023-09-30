@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: "#000";
+  background-color: #fff;
 `;
 
 export const Title = styled.Text`
@@ -10,3 +11,30 @@ export const Title = styled.Text`
   font-weight: bold;
   margin: 14px;
 `;
+
+// BOX MY CARDS
+export const BoxMyCards = styled.View`
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 90%;
+  height: 57px;
+  margin-left: 25px;
+  margin-right: 23px;
+  padding-left: 18px;
+  padding-right: 20px;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_DEFAULT};
+  border-radius: 15px;
+`;
+
+export const TitleMyCards = styled.Text`
+  font-size: 14px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
+  margin-bottom: 6px;
+`;
+
+export const IconMaterialIcons = styled(MaterialIcons).attrs(({ theme }) => ({
+  color: theme.COLORS.BLACK,
+}))``;
