@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { FontAwesome } from "@expo/vector-icons";
 
 export type DirectionVariant = "column" | "row";
 
@@ -10,7 +11,7 @@ type AreaButtonProps = {
   flexDirection?: DirectionVariant;
 };
 
-type LinesProps = {
+type SizeAndPositionProps = {
   width?: number;
   height?: number;
   top?: number;
@@ -30,7 +31,7 @@ export const Container = styled.ScrollView`
   padding-top: 8px;
   padding-left: 27px;
   padding-right: 22px;
-  /* background-color: #ecf0f1; */
+  margin-bottom: 25px;
 `;
 
 export const ActionButton = styled.TouchableOpacity<ActionProps>`
@@ -40,7 +41,7 @@ export const ActionButton = styled.TouchableOpacity<ActionProps>`
 `;
 
 export const AreaButton = styled.View<AreaButtonProps>`
-  background-color: #ecf0f1;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_DEFAULT};
   width: 71px;
   height: 71px;
   border-radius: 36px;
@@ -67,7 +68,7 @@ export const LabelButtonRecharge = styled.Text`
 `;
 
 // ICON LINES
-export const BoxLines = styled.View<LinesProps>`
+export const BoxLines = styled.View<SizeAndPositionProps>`
   width: ${({ width }) => (width ? width : 4)}px;
   height: ${({ height }) => (height ? height : 9)}px;
   background-color: black;
@@ -95,21 +96,20 @@ export const IconTransfer = styled.View`
 `;
 
 // ICON PHONE
-export const BoxPhone = styled.View`
-  width: 14.5px;
-  height: 22.5px;
-  align-items: center;
-  justify-content: flex-end;
+export const BoxPhone = styled.View<SizeAndPositionProps>`
+  position: relative;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   border-color: black;
   border-width: 2px;
   border-radius: 4px;
 `;
 
-export const HorizontalLinePhone = styled.View`
-  height: 2px;
-  width: 4px;
+export const HorizontalLinePhone = styled.View<SizeAndPositionProps>`
+  position: absolute;
+  height: ${({ height }) => height}px;
+  width: ${({ width }) => width}px;
   background-color: black;
-  margin-bottom: 2px;
 `;
 
 // ICON CADEADO
@@ -147,13 +147,20 @@ export const BottomRectanglePadlock = styled.View`
   border-color: black;
   border-width: 2px;
   border-top-width: 0;
-  background-color: #ecf0f1;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_DEFAULT};
 `;
 
 // ICON NETOWORK
-export const BoxLinesNetwork = styled.View<LinesProps>`
+export const BoxLinesNetwork = styled.View<SizeAndPositionProps>`
   width: ${({ width }) => (width ? width : 4)}px;
   height: ${({ height }) => (height ? height : 9)}px;
   background-color: black;
   position: absolute;
+`;
+
+export const IconFontAwesome = styled(FontAwesome).attrs(({ theme }) => ({
+  color: theme.COLORS.BLACK,
+}))`
+  position: absolute;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_DEFAULT};
 `;

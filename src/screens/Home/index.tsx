@@ -3,7 +3,8 @@ import Header from "@components/Header";
 import Balance from "@components/Balance";
 import Movements from "@components/Movements";
 import Actions from "@components/Actions";
-import { Container, Title } from "./style";
+import { BoxMyCards, Container, Title, TitleMyCards } from "./style";
+import { BoxPhone, HorizontalLinePhone } from "@components/Actions/style";
 
 const list = [
   {
@@ -89,14 +90,21 @@ const Home = () => {
 
       <Actions />
 
-      <Title>Últimas movimentações</Title>
-      <FlatList
+      <BoxMyCards>
+        <BoxPhone height={20} width={16}>
+          <HorizontalLinePhone height={3} width={2} top={2.5} right={4} />
+        </BoxPhone>
+        <TitleMyCards>Meus cartões</TitleMyCards>
+      </BoxMyCards>
+
+      {/* <Title>Últimas movimentações</Title> */}
+      {/* <FlatList
         style={{ marginHorizontal: 14 }}
         data={list}
         keyExtractor={(item) => String(item.id)}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <Movements data={item} />}
-      />
+      /> */}
     </Container>
   );
 };

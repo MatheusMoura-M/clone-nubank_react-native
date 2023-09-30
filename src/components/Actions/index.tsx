@@ -11,15 +11,15 @@ import {
   HorizontalLinePadlock,
   HorizontalLinePhone,
   IconContainerPadlock,
+  IconFontAwesome,
   IconTransfer,
   IconWrapperPadlock,
   LabelButton,
   LabelButtonRecharge,
 } from "./style";
 import { Image } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import { IconFontAwesome5 } from "@components/Balance/style";
+import { IconMaterialIcons } from "@screens/Home/style";
 
 const Actions = () => (
   <Container horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -48,17 +48,7 @@ const Actions = () => (
         <BoxTransfer>
           <IconTransfer />
 
-          <FontAwesome
-            name="arrow-up"
-            size={10}
-            color="black"
-            style={{
-              position: "absolute",
-              top: 7,
-              left: 12,
-              backgroundColor: "#ecf0f1",
-            }}
-          />
+          <IconFontAwesome name="arrow-up" size={10} top={7} left={12} />
         </BoxTransfer>
       </AreaButton>
       <LabelButton marginRight={3}>Transferir</LabelButton>
@@ -66,8 +56,8 @@ const Actions = () => (
 
     <ActionButton marginRight={11}>
       <AreaButton>
-        <BoxPhone>
-          <HorizontalLinePhone />
+        <BoxPhone height={22.5} width={14.5}>
+          <HorizontalLinePhone height={2} width={4} bottom={2} left={3} />
         </BoxPhone>
       </AreaButton>
       <LabelButtonRecharge>Recarga de celular</LabelButtonRecharge>
@@ -79,12 +69,7 @@ const Actions = () => (
           <IconWrapperPadlock>
             <IconContainerPadlock />
           </IconWrapperPadlock>
-          <FontAwesome
-            name="dollar"
-            size={12}
-            color="black"
-            style={{ position: "absolute", right: 6, top: -0.4 }}
-          />
+          <IconFontAwesome name="dollar" size={12} top={-0.4} right={6} />
           <HorizontalLinePadlock />
           <BottomRectanglePadlock />
         </BoxPadlock>
@@ -94,20 +79,14 @@ const Actions = () => (
 
     <ActionButton marginRight={11}>
       <AreaButton>
-        <MaterialIcons
+        <IconMaterialIcons
           name="chat-bubble-outline"
           size={25}
-          color="black"
           style={{
             transform: [{ rotateY: "180deg" }],
           }}
         />
-        <FontAwesome5
-          name="dollar-sign"
-          size={11}
-          color="black"
-          style={{ position: "absolute", top: 28 }}
-        />
+        <IconFontAwesome5 name="dollar-sign" size={11} top={28} />
       </AreaButton>
       <LabelButton>Cobrar</LabelButton>
     </ActionButton>
@@ -127,15 +106,12 @@ const Actions = () => (
         <BoxTransfer>
           <IconTransfer />
 
-          <FontAwesome
+          <IconFontAwesome
             name="arrow-up"
             size={10}
-            color="black"
+            top={7}
+            left={12}
             style={{
-              position: "absolute",
-              top: 7,
-              left: 12,
-              backgroundColor: "#ecf0f1",
               transform: [{ rotateZ: "180deg" }],
             }}
           />
@@ -145,7 +121,14 @@ const Actions = () => (
     </ActionButton>
 
     <ActionButton marginRight={55}>
-      <AreaButton></AreaButton>
+      <AreaButton>
+        <Image
+          source={require("../../assets/world.png")}
+          style={{ width: 25, height: 25 }}
+        />
+
+        <IconFontAwesome name="arrow-up" size={11} bottom={22} right={23.2} />
+      </AreaButton>
       <LabelButton>Ultimo</LabelButton>
     </ActionButton>
   </Container>

@@ -1,6 +1,7 @@
 export default {
   COLORS: {
-    WHITE: "#FFFFFF",
+    WHITE: "#FFF",
+    BLACK: "#000",
     PURPLE_DARK: "#5f259f",
     PURPLE_MID: "#820ad1",
     PURPLE_LIGHT: "#5f259f",
@@ -11,6 +12,7 @@ export default {
     GRAY_300: "#DDDEDF",
     GRAY_200: "#EFF0F0",
     GRAY_100: "#FAFAFA",
+    GRAY_DEFAULT: "#efefef",
   },
   FONT_FAMILY: {
     ROBOTO: {
