@@ -1,28 +1,13 @@
 import styled from "styled-components/native";
 import { FontAwesome } from "@expo/vector-icons";
-
-export type DirectionVariant = "column" | "row";
-
-type ActionProps = {
-  marginRight: number;
-};
+import {
+  DirectionVariant,
+  MarginProps,
+  SizeAndPositionProps,
+} from "@screens/Home/style";
 
 type AreaButtonProps = {
   flexDirection?: DirectionVariant;
-};
-
-type SizeAndPositionProps = {
-  width?: number;
-  height?: number;
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
-};
-
-type LabelButtonProps = {
-  marginRight?: number;
-  marginLeft?: number;
 };
 
 export const Container = styled.ScrollView`
@@ -34,7 +19,7 @@ export const Container = styled.ScrollView`
   margin-bottom: 25px;
 `;
 
-export const ActionButton = styled.TouchableOpacity<ActionProps>`
+export const ActionButton = styled.TouchableOpacity<MarginProps>`
   align-items: center;
   margin-right: ${({ marginRight }) => marginRight}px;
   position: relative;
@@ -51,7 +36,7 @@ export const AreaButton = styled.View<AreaButtonProps>`
     flexDirection ? flexDirection : "column"};
 `;
 
-export const LabelButton = styled.Text<LabelButtonProps>`
+export const LabelButton = styled.Text<MarginProps>`
   margin-top: 9px;
   margin-top: 9px;
   text-align: center;

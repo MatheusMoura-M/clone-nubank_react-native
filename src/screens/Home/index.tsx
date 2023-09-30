@@ -1,10 +1,9 @@
-import { FlatList } from "react-native";
 import Header from "@components/Header";
 import Balance from "@components/Balance";
-import Movements from "@components/Movements";
 import Actions from "@components/Actions";
-import { BoxMyCards, Container, Title, TitleMyCards } from "./style";
+import { BoxMyCards, Container, TitleMyCards } from "./style";
 import { BoxPhone, HorizontalLinePhone } from "@components/Actions/style";
+import BoxInfoScroll from "@components/BoxInfoScroll";
 
 const list = [
   {
@@ -96,6 +95,8 @@ const Home = () => {
         </BoxPhone>
         <TitleMyCards>Meus cartões</TitleMyCards>
       </BoxMyCards>
+
+      <BoxInfoScroll />
 
       {/* <Title>Últimas movimentações</Title> */}
       {/* <FlatList

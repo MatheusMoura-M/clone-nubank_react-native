@@ -1,6 +1,25 @@
 import styled from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
 
+export type DirectionVariant = "column" | "row";
+
+export type SizeAndPositionProps = {
+  width?: number;
+  height?: number;
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type MarginProps = {
+  marginRight?: number;
+  marginLeft?: number;
+  marginTop?: number;
+  marginBottom?: number;
+  margin?: number;
+};
+
 export const Container = styled.View`
   flex: 1;
   background-color: #fff;
