@@ -2,8 +2,8 @@ export default {
   COLORS: {
     WHITE: "#FFF",
     BLACK: "#000",
-    PURPLE_DARK: "#5f259f",
-    PURPLE_MID: "#820ad1",
+    PURPLE_DARK: "#820ad1",
+    PURPLE_MID: "#5f259f",
     PURPLE_LIGHT: "#5f259f",
     GRAY_700: "#1B1D1E",
     GRAY_600: "#333638",

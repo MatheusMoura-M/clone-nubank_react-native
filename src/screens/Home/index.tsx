@@ -4,6 +4,11 @@ import Actions from "@components/Actions";
 import { BoxMyCards, Container, TitleMyCards } from "./style";
 import { BoxPhone, HorizontalLinePhone } from "@components/Actions/style";
 import BoxInfoScroll from "@components/BoxInfoScroll";
+import { ThemeType } from "src/@types/styled";
+
+export type HomeProps = {
+  theme: ThemeType;
+};
 
 const list = [
   {
@@ -80,7 +85,7 @@ const calculateExpenses = () => {
   return stringFormated;
 };
 
-const Home = () => {
+const Home = ({ theme }: HomeProps) => {
   return (
     <Container>
       <Header name={"Matheus Moura"} />
@@ -96,7 +101,7 @@ const Home = () => {
         <TitleMyCards>Meus cartões</TitleMyCards>
       </BoxMyCards>
 
-      <BoxInfoScroll />
+      <BoxInfoScroll theme={theme} />
 
       {/* <Title>Últimas movimentações</Title> */}
       {/* <FlatList
