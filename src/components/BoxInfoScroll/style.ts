@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import { MarginProps } from "@screens/Home/style";
 
 export const Container = styled.ScrollView`
+  height: 122px;
   max-height: 122px;
   padding-top: 8px;
   padding-left: 25px;

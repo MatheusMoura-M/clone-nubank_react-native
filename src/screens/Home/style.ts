@@ -20,8 +20,7 @@ export type MarginProps = {
   margin?: number;
 };
 
-export const Container = styled.View`
-  flex: 1;
+export const Container = styled.ScrollView`
   background-color: #fff;
 `;
 

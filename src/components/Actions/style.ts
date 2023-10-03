@@ -11,7 +11,7 @@ type AreaButtonProps = {
 };
 
 export const Container = styled.ScrollView`
-  flex: 1;
+  height: 125px;
   max-height: 125px;
   padding-top: 8px;
   padding-left: 27px;
