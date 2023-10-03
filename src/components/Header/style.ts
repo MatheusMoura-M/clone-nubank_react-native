@@ -53,7 +53,7 @@ export const BoxEnd = styled.View`
   flex-direction: row;
   justify-content: flex-end;
   gap: 25px;
-  padding-top: 14px;
+  padding-top: 13px;
   padding-right: 36px;
 `;
 
@@ -63,17 +63,17 @@ export const ButtonOpacityEye = styled.TouchableOpacity<ButtonEyeProps>`
   right: ${({ right }) => (right ? `${right}px` : "unset")};
   bottom: ${({ bottom }) => (bottom ? `${bottom}px` : "unset")};
   left: ${({ left }) => (left ? `${left}px` : "unset")};
-  min-width: 45px;
+  min-width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
+  padding: 7px;
+  padding-top: 10px;
+  border-radius: 25px;
   background-color: ${({ isPressedEye, isPressedHelp, isPressedInvite }) =>
     isPressedEye || isPressedHelp || isPressedInvite
       ? "#00000030"
       : "transparent"};
-  height: 45px;
-  border-radius: 25px;
-  padding: 7px;
-  padding-top: 10px;
 `;
 
 export const IconContainer = styled.View<IconContainerProps>`
