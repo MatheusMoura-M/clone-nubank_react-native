@@ -21,7 +21,7 @@ const App = () => {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home theme={theme} /> : <LoadIndicator color="purple" />}
+      {fontsLoaded ? <Home /> : <LoadIndicator color="purple" />}
     </ThemeProvider>
   );
 };

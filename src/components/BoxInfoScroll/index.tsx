@@ -1,8 +1,7 @@
-import { HomeProps } from "@screens/Home";
 import { Box, Container, Span, Text } from "./style";
 import { selectedMessages } from "@utils/boxInfo";
 
-const BoxInfoScroll = ({ theme }: HomeProps) => {
+const BoxInfoScroll = () => {
   return (
     <Container horizontal={true} showsHorizontalScrollIndicator={false}>
       {selectedMessages.map((item, index) => {
