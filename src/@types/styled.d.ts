@@ -6,6 +6,7 @@ export type ThemeType = {
   COLORS: {
     WHITE: string;
     BLACK: string;
+    BLACKTOGGLE: string;
     PURPLE_DARK: string;
     PURPLE_MID: string;
     PURPLE_LIGHT: string;

@@ -4,6 +4,7 @@ import Actions from "@components/Actions";
 import { BoxMyCards, Container, TitleMyCards } from "./style";
 import { BoxPhone, HorizontalLinePhone } from "@components/Actions/style";
 import BoxInfoScroll from "@components/BoxInfoScroll";
+import BoxCreditCard from "@components/BoxCreditCard";
 
 const list = [
   {
@@ -98,6 +99,7 @@ const Home = () => {
 
       <BoxInfoScroll />
 
+      <BoxCreditCard />
       {/* <Title>Últimas movimentações</Title> */}
       {/* <FlatList
         style={{ marginHorizontal: 14 }}

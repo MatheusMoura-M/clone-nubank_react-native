@@ -27,7 +27,6 @@ const Balance = ({ saldo, gastos }: PropsBalance) => {
           <ItemTitle>Conta</ItemTitle>
           <Content>
             <BalanceText>R$ {saldo}</BalanceText>
-            {/* <BalanceText>R$ 73,84</BalanceText> */}
           </Content>
         </View>
 

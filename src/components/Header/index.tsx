@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatusBar, TouchableWithoutFeedback, View } from "react-native";
+import { StatusBar } from "react-native";
 import {
   Container,
   Content,
@@ -16,6 +16,7 @@ import {
   Lash,
   IconContainer,
   CurvedLine,
+  ButtonOpacityEye,
 } from "./style";
 
 import * as ImagePicker from "expo-image-picker";
@@ -29,6 +30,9 @@ type PropsHeader = {
 };
 
 const Header = ({ name }: PropsHeader) => {
+  const [isPressedEye, setIsPressedEye] = useState(false);
+  const [isPressedHelp, setIsPressedHelp] = useState(false);
+  const [isPressedInvite, setIsPressedInvite] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string>("");
   const [visibleValues, setVisibleValues] = useState<boolean>(true);
 
@@ -73,16 +77,22 @@ const Header = ({ name }: PropsHeader) => {
         </BoxStart>
 
         <BoxEnd>
-          <TouchableWithoutFeedback
+          <ButtonOpacityEye
+            bottom={10}
+            left={9}
+            activeOpacity={1}
+            delayLongPress={300}
+            isPressedEye={isPressedEye}
             onPress={() => setVisibleValues(!visibleValues)}
-            style={{ minWidth: 23 }}
+            onLongPress={() => setIsPressedEye(true)}
+            onPressOut={() => setIsPressedEye(false)}
           >
             {visibleValues ? (
-              <IconContainer paddingTop={5}>
+              <IconContainer paddingBottom={12}>
                 <IconEyeBox>
                   <IconEye />
                 </IconEyeBox>
-                <IconEyeCircle top={9} left={7.8} width={8} height={8} />
+                <IconEyeCircle top={5} left={7.8} width={8} height={8} />
               </IconContainer>
             ) : (
               <IconContainer paddingTop={7}>
@@ -95,23 +105,48 @@ const Header = ({ name }: PropsHeader) => {
                 <Lash top={11} left={20.5} transformRotate={40} />
               </IconContainer>
             )}
-          </TouchableWithoutFeedback>
+          </ButtonOpacityEye>
 
-          <FontAwesome5 name="question-circle" size={22} color="white" />
-
-          <IconContainer paddingTop={13}>
-            <IconEyeCircle top={1} left={3} width={10} height={10} />
-
-            <CurvedLine />
-
-            <MaterialCommunityIcons
-              name="email-outline"
-              size={12}
+          <ButtonOpacityEye
+            isPressedHelp={isPressedHelp}
+            bottom={10}
+            left={5}
+            activeOpacity={1}
+            delayLongPress={300}
+            onLongPress={() => setIsPressedHelp(true)}
+            onPressOut={() => setIsPressedHelp(false)}
+          >
+            <FontAwesome5
+              bottom={1.5}
+              name="question-circle"
+              size={22}
               color="white"
-              top={-10}
-              right={-7}
             />
-          </IconContainer>
+          </ButtonOpacityEye>
+
+          <ButtonOpacityEye
+            isPressedInvite={isPressedInvite}
+            bottom={8}
+            left={0}
+            activeOpacity={1}
+            delayLongPress={300}
+            onLongPress={() => setIsPressedInvite(true)}
+            onPressOut={() => setIsPressedInvite(false)}
+          >
+            <IconContainer paddingTop={13} top={4} right={2}>
+              <IconEyeCircle top={1} left={3} width={10} height={10} />
+
+              <CurvedLine />
+
+              <MaterialCommunityIcons
+                name="email-outline"
+                size={12}
+                color="white"
+                top={-10}
+                right={-7}
+              />
+            </IconContainer>
+          </ButtonOpacityEye>
         </BoxEnd>
       </Content>
     </Container>

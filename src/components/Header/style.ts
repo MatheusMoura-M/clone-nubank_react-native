@@ -1,12 +1,14 @@
 import styled from "styled-components/native";
 import { MotiView, MotiText } from "moti";
+import { SizeAndPositionProps } from "@screens/Home/style";
 
 type ContainerProps = {
   statusBarHeight: number;
 };
 
-type IconContainerProps = {
-  paddingTop: number;
+type IconContainerProps = SizeAndPositionProps & {
+  paddingTop?: number;
+  paddingBottom?: number;
 };
 
 type LashProps = {
@@ -20,6 +22,12 @@ type IconCircleProps = {
   left: number;
   width: number;
   height: number;
+};
+
+type ButtonEyeProps = SizeAndPositionProps & {
+  isPressedEye?: boolean;
+  isPressedHelp?: boolean;
+  isPressedInvite?: boolean;
 };
 
 export const Container = styled.View<ContainerProps>`
@@ -40,6 +48,7 @@ export const BoxStart = styled.View`
 `;
 
 export const BoxEnd = styled.View`
+  position: relative;
   flex: 1;
   flex-direction: row;
   justify-content: flex-end;
@@ -48,8 +57,31 @@ export const BoxEnd = styled.View`
   padding-right: 36px;
 `;
 
+export const ButtonOpacityEye = styled.TouchableOpacity<ButtonEyeProps>`
+  position: "absolute";
+  top: ${({ top }) => (top ? `${top}px` : "unset")};
+  right: ${({ right }) => (right ? `${right}px` : "unset")};
+  bottom: ${({ bottom }) => (bottom ? `${bottom}px` : "unset")};
+  left: ${({ left }) => (left ? `${left}px` : "unset")};
+  min-width: 45px;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ isPressedEye, isPressedHelp, isPressedInvite }) =>
+    isPressedEye || isPressedHelp || isPressedInvite
+      ? "#00000030"
+      : "transparent"};
+  height: 45px;
+  border-radius: 25px;
+  padding: 7px;
+  padding-top: 10px;
+`;
+
 export const IconContainer = styled.View<IconContainerProps>`
-  padding-top: ${({ paddingTop }) => paddingTop}px;
+  top: ${({ top }) => (top ? `${top}px` : "unset")};
+  right: ${({ right }) => (right ? `${right}px` : "unset")};
+  padding-top: ${({ paddingTop }) => (paddingTop ? paddingTop : 0)}px;
+  padding-bottom: ${({ paddingBottom }) =>
+    paddingBottom ? paddingBottom : 0}px;
 `;
 
 // Icon Eye-on
