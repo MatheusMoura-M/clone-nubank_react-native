@@ -8,6 +8,7 @@ import BoxCreditCard from "@components/BoxCreditCard";
 import PaymentAssistant from "@components/BoxPaymentAssistant";
 import { calculateBalance, calculateExpenses } from "@utils/calculateValues";
 import BoxLoans from "@components/BoxLoans";
+import BoxDiscovery from "@components/BoxDiscovery";
 
 const Home = () => {
   return (
@@ -32,6 +33,8 @@ const Home = () => {
       <PaymentAssistant />
 
       <BoxLoans />
+
+      <BoxDiscovery />
     </Container>
   );
 };
