@@ -1,5 +1,14 @@
-import { Box, Container, Span, Text } from "./style";
-import { selectedMessages } from "@utils/boxInfo";
+import {
+  Box85,
+  BoxInvite,
+  BoxMoney,
+  BoxMyLimits,
+  BoxPay,
+  BoxPix,
+  BoxPremios,
+} from "@components/AllInfoBox";
+import { Container } from "./style";
+import { selectedMessages } from "@utils/RandomInfo/boxInfo";
 
 const BoxInfoScroll = () => {
   return (
@@ -8,70 +17,19 @@ const BoxInfoScroll = () => {
         const words = item.split(" ");
 
         if (item.split(" ")[0] == "Prêmios") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Text>{words.slice(0, 4).join(" ")}</Text>
-              <Text>{words.slice(4).join(" ")}</Text>
-            </Box>
-          );
+          return <BoxPremios key={index} index={index} words={words} />;
         } else if (item.split(" ")[0] == "85") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Span>
-                {words.slice(0, 4).join(" ")}{" "}
-                <Text>{words.slice(4, 6).join(" ")}</Text>
-              </Span>
-              <Text>{words.slice(6).join(" ")}</Text>
-            </Box>
-          );
+          return <Box85 key={index} index={index} words={words} />;
         } else if (item.split(" ")[0] == "Convide") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Span>{words.slice(0, 5).join(" ")}</Span>
-              <Text>{words.slice(5).join(" ")}</Text>
-            </Box>
-          );
+          return <BoxInvite key={index} index={index} words={words} />;
         } else if (item.split(" ")[0] == "Pague") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Text>
-                {words.slice(0, 1).join(" ")}{" "}
-                <Span>{words.slice(1, 4).join(" ")}</Span>{" "}
-                {words.slice(4, 5).join(" ")}
-              </Text>
-              <Text>{words.slice(5).join(" ")}</Text>
-            </Box>
-          );
+          return <BoxPay key={index} index={index} words={words} />;
         } else if (item.split(" ")[0] == "Dinheiro") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Text>{words.slice(0, 4).join(" ")}</Text>
-              <Span>
-                {words.slice(4, 6).join(" ")}{" "}
-                <Text>{words.slice(6).join(" ")}</Text>
-              </Span>
-            </Box>
-          );
+          return <BoxMoney key={index} index={index} words={words} />;
         } else if (item.split(" ")[0] == "Pix") {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Span>
-                {words.slice(0, 3).join(" ")}{" "}
-                <Text>{words.slice(3, 5).join(" ")}</Text>
-              </Span>
-              <Text>{words.slice(5).join(" ")}</Text>
-            </Box>
-          );
+          return <BoxPix key={index} index={index} words={words} />;
         } else {
-          return (
-            <Box marginRight={index == 2 ? 52 : 15} key={index}>
-              <Span>
-                {words.slice(0, 3).join(" ")}{" "}
-                <Text>{words.slice(3, 5).join(" ")}</Text>
-              </Span>
-              <Text>{words.slice(5).join(" ")}</Text>
-            </Box>
-          );
+          return <BoxMyLimits key={index} index={index} words={words} />;
         }
       })}
     </Container>

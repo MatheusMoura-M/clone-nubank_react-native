@@ -13,7 +13,7 @@ export default {
     GRAY_300: "#DDDEDF",
     GRAY_200: "#EFF0F0",
     GRAY_100: "#FAFAFA",
-    GRAY_DEFAULT: "#efefef",
+    GRAY_DEFAULT: "#b9b8b8",
   },
   FONT_FAMILY: {
     ROBOTO: {
