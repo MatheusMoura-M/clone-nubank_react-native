@@ -78,13 +78,19 @@ const Header = ({ name }: PropsHeader) => {
 
         <BoxEnd>
           <ButtonOpacityEye
-            bottom={10}
-            left={9}
+            bottom={13}
+            left={70}
             activeOpacity={1}
-            delayLongPress={300}
+            delayLongPress={100}
             isPressedEye={isPressedEye}
             onPress={() => setVisibleValues(!visibleValues)}
-            onLongPress={() => setIsPressedEye(true)}
+            onLongPress={() => {
+              setIsPressedEye(true);
+
+              setTimeout(() => {
+                setVisibleValues(!visibleValues);
+              }, 400);
+            }}
             onPressOut={() => setIsPressedEye(false)}
           >
             {visibleValues ? (
@@ -109,10 +115,10 @@ const Header = ({ name }: PropsHeader) => {
 
           <ButtonOpacityEye
             isPressedHelp={isPressedHelp}
-            bottom={10}
-            left={5}
+            bottom={13}
+            left={46}
             activeOpacity={1}
-            delayLongPress={300}
+            delayLongPress={100}
             onLongPress={() => setIsPressedHelp(true)}
             onPressOut={() => setIsPressedHelp(false)}
           >
@@ -126,10 +132,10 @@ const Header = ({ name }: PropsHeader) => {
 
           <ButtonOpacityEye
             isPressedInvite={isPressedInvite}
-            bottom={8}
-            left={0}
+            bottom={13}
+            left={21}
             activeOpacity={1}
-            delayLongPress={300}
+            delayLongPress={100}
             onLongPress={() => setIsPressedInvite(true)}
             onPressOut={() => setIsPressedInvite(false)}
           >

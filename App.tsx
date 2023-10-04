@@ -18,7 +18,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <StatusBar
         barStyle="light-content"
-        backgroundColor="transparent"
+        backgroundColor={theme.COLORS.PURPLE_DARK}
         translucent
       />
       {fontsLoaded ? <Home /> : <LoadIndicator color="purple" />}
