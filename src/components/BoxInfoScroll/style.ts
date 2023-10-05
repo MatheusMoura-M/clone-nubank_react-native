@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import { MarginProps } from "@screens/Home/style";
 
 export const Container = styled.ScrollView`
   height: 122px;

@@ -28,7 +28,7 @@ const Home = () => {
 
       <BoxInfoScroll />
 
-      <BoxCreditCard />
+      <BoxCreditCard currentInvoice={true} />
 
       <PaymentAssistant />
 

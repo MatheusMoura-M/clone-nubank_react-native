@@ -1,25 +1,21 @@
 import { View } from "react-native";
-import { BoxButtons, SpanDueDate, SubTitle, TextValue } from "./style";
+import { BoxButtons, Span, SpanDueDate, SubTitle, TextValue } from "./style";
 import ButtonCreditCard from "@components/ButtonCreditCard";
 
 const CurrentInvoiceContainer = () => {
   return (
     <View>
-      <SubTitle>Fatura fechada</SubTitle>
-      <TextValue>R$ 115,89</TextValue>
-      <SpanDueDate>Vencimento dia 06</SpanDueDate>
+      <SubTitle>Fatura atual</SubTitle>
+      <TextValue>R$ 430,01</TextValue>
+      <SpanDueDate>Limite disponível de R$ 769,99</SpanDueDate>
+      <SpanDueDate>
+        Limite adicional para Pix e boletos: <Span>R$ 550,00</Span>
+      </SpanDueDate>
       <BoxButtons>
         <ButtonCreditCard
-          width={122}
+          width={117}
           height={40}
-          text="Pagar fatura"
-          backgroundColor={"red"}
-          fixedColor={true}
-        />
-        <ButtonCreditCard
-          width={93}
-          height={40}
-          text="Parcelar"
+          text="Renegociar"
           backgroundColor={"gray"}
           fixedColor={false}
         />

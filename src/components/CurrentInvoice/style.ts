@@ -18,6 +18,12 @@ export const SpanDueDate = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.LIGHT};
   color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
+  margin-bottom: 2px;
+`;
+
+export const Span = styled.Text`
+  font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.REGULAR};
+  color: ${({ theme }) => theme.COLORS.PURPLE_DARK_TEXT};
 `;
 
 export const BoxButtons = styled.View`
