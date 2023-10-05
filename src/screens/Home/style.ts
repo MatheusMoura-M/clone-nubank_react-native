@@ -21,7 +21,7 @@ export type MarginProps = {
 };
 
 export const Container = styled.ScrollView`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.COLORS.WHITETOGGLE};
 `;
 
 export const Title = styled.Text`

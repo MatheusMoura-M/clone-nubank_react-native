@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { MotiView } from "moti";
 
 export const ClickableContainer = styled.TouchableOpacity``;
@@ -11,15 +11,13 @@ export const Container = styled(MotiView)`
   padding-bottom: 25px;
   padding-left: 24px;
   padding-right: 24px;
-  background-color: #fff;
-  border-radius: 4px;
   z-index: 99;
 `;
 
 export const ItemTitle = styled.Text`
   font-size: 17px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
-  color: #000;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const Content = styled.View`
@@ -29,13 +27,13 @@ export const Content = styled.View`
 
 export const BalanceText = styled.Text`
   font-size: 18px;
-  color: #000;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
   margin-top: 3px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
 `;
 
-export const IconFontAwesome5 = styled(FontAwesome5).attrs(({ theme }) => ({
-  color: theme.COLORS.BLACK,
-}))`
-  position: absolute;
-`;
+export const IconMaterialIconsBalance = styled(MaterialIcons).attrs(
+  ({ theme }) => ({
+    color: theme.COLORS.GRAY_400,
+  })
+)``;

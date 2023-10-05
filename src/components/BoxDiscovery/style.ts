@@ -6,8 +6,6 @@ export const Container = styled.View`
   padding-top: 10px;
   padding-left: 25px;
   margin-top: 16px;
-  border-bottom-width: 2px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
 
 export const ContainerScroll = styled.ScrollView`
@@ -15,8 +13,6 @@ export const ContainerScroll = styled.ScrollView`
   margin-top: 12px;
   flex-direction: row;
   overflow: scroll;
-  border-bottom-width: 2px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
 
 export const Box = styled.View<MarginProps>`

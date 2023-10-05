@@ -10,7 +10,7 @@ export const Container = styled.ScrollView`
   margin-top: 16px;
   flex-direction: row;
   overflow: scroll;
-  border-bottom-width: 2px;
+  border-bottom-width: 1.5px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
 

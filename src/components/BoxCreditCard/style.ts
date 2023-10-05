@@ -6,7 +6,7 @@ export const Container = styled.TouchableOpacity`
   padding-left: 25px;
   padding-right: 22px;
   margin-top: 16px;
-  border-bottom-width: 2px;
+  border-bottom-width: 1.5px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
 

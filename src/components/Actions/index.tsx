@@ -18,7 +18,7 @@ import {
   LabelButtonRecharge,
 } from "./style";
 import { Image } from "react-native";
-import { IconFontAwesome5 } from "@components/Balance/style";
+import { IconFontAwesome5 } from "@components/AllInfoBox/style";
 import { IconMaterialIcons } from "@screens/Home/style";
 
 const Actions = () => (

@@ -6,10 +6,11 @@ export type ThemeType = {
   COLORS: {
     WHITE: string;
     BLACK: string;
+    WHITETOGGLE: string;
     BLACKTOGGLE: string;
-    PURPLE_DARK: string;
-    PURPLE_MID: string;
+    PURPLE: string;
     PURPLE_LIGHT: string;
+    PURPLE_DARK: string;
     GRAY_700: string;
     GRAY_600: string;
     GRAY_500: string;

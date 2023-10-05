@@ -1,5 +1,6 @@
-import { MarginProps } from "@screens/Home/style";
 import styled from "styled-components/native";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MarginProps } from "@screens/Home/style";
 
 export const Box = styled.View<MarginProps>`
   align-items: flex-start;
@@ -22,4 +23,11 @@ export const Text = styled.Text`
 export const Span = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.REGULAR};
   color: ${({ theme }) => theme.COLORS.PURPLE_DARK};
+`;
+
+// In Actions
+export const IconFontAwesome5 = styled(FontAwesome5).attrs(({ theme }) => ({
+  color: theme.COLORS.BLACK,
+}))`
+  position: absolute;
 `;

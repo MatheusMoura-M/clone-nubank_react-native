@@ -1,4 +1,3 @@
-import React from "react";
 import { View } from "react-native";
 import {
   Container,
@@ -6,9 +5,8 @@ import {
   Content,
   BalanceText,
   ClickableContainer,
+  IconMaterialIconsBalance,
 } from "./style";
-
-import { MaterialIcons } from "@expo/vector-icons";
 
 type PropsBalance = {
   saldo: string;
@@ -30,7 +28,7 @@ const Balance = ({ saldo, gastos }: PropsBalance) => {
           </Content>
         </View>
 
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="#696767" />
+        <IconMaterialIconsBalance name="keyboard-arrow-right" size={24} />
       </Container>
     </ClickableContainer>
   );

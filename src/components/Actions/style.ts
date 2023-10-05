@@ -41,14 +41,16 @@ export const LabelButton = styled.Text<MarginProps>`
   margin-top: 9px;
   text-align: center;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const LabelButtonRecharge = styled.Text`
   position: absolute;
-  min-width: 78px;
   bottom: 3px;
+  min-width: 78px;
   margin-top: 9px;
   text-align: center;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
 `;
 

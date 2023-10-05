@@ -31,7 +31,7 @@ type ButtonEyeProps = SizeAndPositionProps & {
 };
 
 export const Container = styled.View<ContainerProps>`
-  background-color: #820ad1;
+  background-color: ${({ theme }) => theme.COLORS.PURPLE_DARK};
   padding-top: ${({ statusBarHeight }) => statusBarHeight - 10}px;
   height: 190px;
 `;
