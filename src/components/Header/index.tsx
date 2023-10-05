@@ -24,17 +24,19 @@ import ImageViewer from "@components/ImageViewer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useAuth } from "@contexts/index";
 
 type PropsHeader = {
   name: string;
 };
 
 const Header = ({ name }: PropsHeader) => {
-  const [isPressedEye, setIsPressedEye] = useState(false);
-  const [isPressedHelp, setIsPressedHelp] = useState(false);
-  const [isPressedInvite, setIsPressedInvite] = useState(false);
+  const { isPressedEye, setIsPressedEye, visibleValues, setVisibleValues } =
+    useAuth();
+
+  const [isPressedHelp, setIsPressedHelp] = useState<boolean>(false);
+  const [isPressedInvite, setIsPressedInvite] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string>("");
-  const [visibleValues, setVisibleValues] = useState<boolean>(true);
 
   const statusBarHeight = StatusBar.currentHeight
     ? StatusBar.currentHeight + 22

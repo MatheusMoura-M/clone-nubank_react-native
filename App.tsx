@@ -8,6 +8,7 @@ import { LoadIndicator } from "@components/Loading";
 import handleFonts from "@utils/fonts";
 
 import Home from "@screens/Home";
+import { AuthProvider } from "@contexts/index";
 
 const App = () => {
   const fontsLoaded = handleFonts();
@@ -15,14 +16,17 @@ const App = () => {
   const theme = deviceTheme ? themes[deviceTheme] : themes.dark;
 
   return (
-    <ThemeProvider theme={theme}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={theme.COLORS.PURPLE_DARK}
-        translucent
-      />
-      {fontsLoaded ? <Home /> : <LoadIndicator color="purple" />}
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor={theme.COLORS.PURPLE_DARK}
+          translucent
+        />
+
+        {fontsLoaded ? <Home /> : <LoadIndicator color="purple" />}
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 

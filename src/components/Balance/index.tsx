@@ -7,6 +7,7 @@ import {
   ClickableContainer,
   IconMaterialIconsBalance,
 } from "./style";
+import { useAuth } from "@contexts/index";
 
 type PropsBalance = {
   saldo: string;
@@ -14,6 +15,8 @@ type PropsBalance = {
 };
 
 const Balance = ({ saldo, gastos }: PropsBalance) => {
+  const { visibleValues } = useAuth();
+
   return (
     <ClickableContainer>
       <Container
@@ -24,7 +27,11 @@ const Balance = ({ saldo, gastos }: PropsBalance) => {
         <View>
           <ItemTitle>Conta</ItemTitle>
           <Content>
-            <BalanceText>R$ {saldo}</BalanceText>
+            {visibleValues ? (
+              <BalanceText>R$ {saldo}</BalanceText>
+            ) : (
+              <BalanceText>....</BalanceText>
+            )}
           </Content>
         </View>
 
