@@ -9,6 +9,7 @@ export type ThemeType = {
     WHITETOGGLE: string;
     BLACKTOGGLE: string;
     PURPLE: string;
+    PURPLE_DARK_TEXT: string;
     PURPLE_LIGHT: string;
     PURPLE_DARK: string;
     GRAY_700: string;

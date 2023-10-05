@@ -51,8 +51,9 @@ export const TitleMyCards = styled.Text`
   font-size: 14px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
   margin-bottom: 6px;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const IconMaterialIcons = styled(MaterialIcons).attrs(({ theme }) => ({
-  color: theme.COLORS.BLACK,
+  color: theme.COLORS.BLACKTOGGLE,
 }))``;

@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 export const Container = styled.View`
   height: 120px;
@@ -31,6 +32,7 @@ export const Title = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
   margin-bottom: 16px;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const SubTitle = styled.Text`
@@ -38,6 +40,7 @@ export const SubTitle = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
   padding-bottom: 3px;
   letter-spacing: -0.2px;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const SpanNew = styled.Text`
@@ -52,4 +55,14 @@ export const SpanNew = styled.Text`
   color: ${({ theme }) => theme.COLORS.WHITE};
   font-size: 11.7px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
+`;
+
+export const IconFontAwesome5Payment = styled(FontAwesome5).attrs(
+  ({ theme }) => ({
+    color: theme.COLORS.BLACKTOGGLE,
+  })
+)`
+  position: absolute;
+  top: 22.5px;
+  left: 27px;
 `;

@@ -1,7 +1,5 @@
 import CurrentInvoiceContainer from "@components/CurrentInvoice";
-import { Container, Title } from "./style";
-
-import { MaterialIcons } from "@expo/vector-icons";
+import { Container, IconMaterialIconsCreditCard, Title } from "./style";
 
 const BoxCreditCard = () => {
   return (
@@ -10,12 +8,7 @@ const BoxCreditCard = () => {
 
       <CurrentInvoiceContainer />
 
-      <MaterialIcons
-        name="keyboard-arrow-right"
-        size={24}
-        color="#696767"
-        style={{ position: "absolute", top: 7, right: 23 }}
-      />
+      <IconMaterialIconsCreditCard name="keyboard-arrow-right" size={24} />
     </Container>
   );
 };

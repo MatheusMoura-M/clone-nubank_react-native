@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Fontisto } from "@expo/vector-icons";
 
 export const Content = styled.View`
   padding: 15px 10px 10px 15px;
@@ -25,4 +26,11 @@ export const Span = styled.Text`
   line-height: 20.5px;
   letter-spacing: -0.3px;
   max-width: 204px;
+`;
+
+// In BoxPayment
+export const IconFontistoPayment = styled(Fontisto).attrs(({ theme }) => ({
+  color: theme.COLORS.BLACKTOGGLE,
+}))`
+  transform: rotateZ(180deg);
 `;

@@ -17,7 +17,7 @@ import {
   LabelButton,
   LabelButtonRecharge,
 } from "./style";
-import { Image } from "react-native";
+import { Image, View } from "react-native";
 import { IconFontAwesome5 } from "@components/AllInfoBox/style";
 import { IconMaterialIcons } from "@screens/Home/style";
 
@@ -25,10 +25,48 @@ const Actions = () => (
   <Container horizontal={true} showsHorizontalScrollIndicator={false}>
     <ActionButton marginRight={11}>
       <AreaButton>
-        <Image
+        <View
+          style={{
+            width: 18.5,
+            height: 18.5,
+            borderWidth: 2.2,
+            borderRadius: 4,
+            transform: [{ rotateZ: "45deg" }],
+            position: "relative",
+          }}
+        >
+          <View
+            style={{
+              position: "absolute",
+              top: 4,
+              right: 9,
+              width: 6.5,
+              height: 4.5,
+              borderTopWidth: 2,
+              borderLeftWidth: 2,
+              borderTopLeftRadius: 90,
+              transform: [{ rotateZ: "10deg" }],
+            }}
+          ></View>
+          <View
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 4.5,
+              width: 6.5,
+              height: 4.5,
+              borderTopWidth: 2,
+              borderRightWidth: 2,
+              borderTopRightRadius: 90,
+              transform: [{ rotateZ: "270deg" }],
+            }}
+          ></View>
+        </View>
+
+        {/* <Image
           source={require("../../assets/pix.png")}
           style={{ width: 25, height: 25 }}
-        />
+        /> */}
       </AreaButton>
       <LabelButton>Área Pix</LabelButton>
     </ActionButton>

@@ -6,6 +6,7 @@ export default {
     BLACKTOGGLE: "#000",
     PURPLE_DARK: "#820ad1",
     PURPLE_LIGHT: "#611e9f",
+    PURPLE_DARK_TEXT: "#a335ec",
     PURPLE: "#5f259f",
     GRAY_700: "#1B1D1E",
     GRAY_600: "#333638",

@@ -16,13 +16,13 @@ export const Box = styled.View<MarginProps>`
 `;
 
 export const Text = styled.Text`
-  color: black;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.REGULAR};
 `;
 
 export const Span = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.REGULAR};
-  color: ${({ theme }) => theme.COLORS.PURPLE_DARK};
+  color: ${({ theme }) => theme.COLORS.PURPLE_DARK_TEXT};
 `;
 
 // In Actions
