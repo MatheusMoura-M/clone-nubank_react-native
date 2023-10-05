@@ -27,7 +27,7 @@ export const Span = styled.Text`
 
 // In Actions
 export const IconFontAwesome5 = styled(FontAwesome5).attrs(({ theme }) => ({
-  color: theme.COLORS.BLACK,
+  color: theme.COLORS.BLACKTOGGLE,
 }))`
   position: absolute;
 `;

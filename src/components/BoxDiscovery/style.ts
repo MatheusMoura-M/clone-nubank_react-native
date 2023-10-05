@@ -37,4 +37,5 @@ export const Title = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
   margin-bottom: 4px;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;

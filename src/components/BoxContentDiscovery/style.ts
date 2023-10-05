@@ -18,11 +18,12 @@ export const SubTitle = styled.Text`
   margin-top: 3px;
   margin-bottom: 5px;
   letter-spacing: -0.3px;
+  color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
 export const Span = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.REGULAR};
-  color: ${({ theme }) => theme.COLORS.GRAY_500};
+  color: ${({ theme }) => theme.COLORS.GRAY_400};
   line-height: 20.5px;
   letter-spacing: -0.3px;
   max-width: 204px;
