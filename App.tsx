@@ -1,5 +1,5 @@
 import "react-native-reanimated";
-import { StatusBar, useColorScheme } from "react-native";
+import { Image, StatusBar, View, useColorScheme } from "react-native";
 
 import { ThemeProvider } from "styled-components";
 import themes from "./src/theme";
@@ -24,7 +24,7 @@ const App = () => {
           translucent
         />
 
-        {fontsLoaded ? <Home /> : <LoadIndicator color="purple" />}
+        {fontsLoaded ? <Home /> : <LoadIndicator />}
       </ThemeProvider>
     </AuthProvider>
   );

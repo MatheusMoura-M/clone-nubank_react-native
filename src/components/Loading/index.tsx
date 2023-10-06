@@ -1,14 +1,20 @@
 import React from "react";
-import { ActivityIndicator, View } from "react-native";
+import { Image, StatusBar } from "react-native";
+import { ContainerLoading } from "./style";
 
-type PropsLoading = {
-  color: string;
-};
-
-export const LoadIndicator = ({ color }: PropsLoading) => {
+export const LoadIndicator = () => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <ActivityIndicator color={color} size={"large"}></ActivityIndicator>
-    </View>
+    <ContainerLoading>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={"#820ad1"}
+        translucent
+      />
+      <Image
+        source={require("../../assets/nubank-logo.png")}
+        style={{ width: 85, height: 85 }}
+        resizeMode="center"
+      />
+    </ContainerLoading>
   );
 };
