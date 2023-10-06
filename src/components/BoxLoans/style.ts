@@ -1,14 +1,8 @@
 import styled from "styled-components/native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { Container } from "@components/BoxPaymentAssistant/style";
 
-export const Container = styled.View`
+export const ContainerLoans = styled(Container)`
   height: 102px;
-  padding-top: 6px;
-  padding-left: 25px;
-  padding-right: 22px;
-  margin-top: 16px;
-  border-bottom-width: 1.5px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
 
 export const Title = styled.Text`

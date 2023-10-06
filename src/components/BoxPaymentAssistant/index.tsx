@@ -7,7 +7,6 @@ import {
   SubTitle,
   Title,
 } from "./style";
-import { Fontisto } from "@expo/vector-icons";
 
 const PaymentAssistant = () => {
   return (

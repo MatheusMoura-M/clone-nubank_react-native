@@ -1,6 +1,9 @@
 import styled from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { CreditCardType } from ".";
+
+type CreditCardType = {
+  currentInvoice: boolean;
+};
 
 export const Container = styled.TouchableOpacity<CreditCardType>`
   height: ${({ currentInvoice }) => (currentInvoice ? 235 : 215)}px;

@@ -6,6 +6,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
+import { useColorScheme } from "react-native";
 
 const handleFonts = () => {
   useEffect(() => {

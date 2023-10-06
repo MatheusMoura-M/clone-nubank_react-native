@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { StatusBar } from "react-native";
 import {
   Container,
@@ -31,31 +30,22 @@ type PropsHeader = {
 };
 
 const Header = ({ name }: PropsHeader) => {
-  const { isPressedEye, setIsPressedEye, visibleValues, setVisibleValues } =
-    useAuth();
-
-  const [isPressedHelp, setIsPressedHelp] = useState<boolean>(false);
-  const [isPressedInvite, setIsPressedInvite] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<string>("");
+  const {
+    isPressedEye,
+    setIsPressedEye,
+    visibleValues,
+    setVisibleValues,
+    isPressedHelp,
+    setIsPressedHelp,
+    isPressedInvite,
+    setIsPressedInvite,
+    selectedImage,
+    handlePickImage,
+  } = useAuth();
 
   const statusBarHeight = StatusBar.currentHeight
     ? StatusBar.currentHeight + 22
     : 64;
-
-  const handlePickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      aspect: [4, 4],
-      allowsEditing: true,
-      base64: true,
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      setSelectedImage(result.assets[0].uri);
-    }
-
-    return null;
-  };
 
   return (
     <Container statusBarHeight={statusBarHeight}>

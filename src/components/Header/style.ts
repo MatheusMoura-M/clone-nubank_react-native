@@ -159,7 +159,7 @@ export const Text = styled.Text`
 export const ButtonUser = styled.TouchableOpacity`
   width: 44px;
   height: 44px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: ${({ theme }) => theme.COLORS.PURPLE_LIGHT};
   justify-content: center;
   align-items: center;
   border-radius: 22px;
