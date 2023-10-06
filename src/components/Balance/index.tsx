@@ -8,6 +8,7 @@ import {
   IconMaterialIconsBalance,
 } from "./style";
 import { useAuth } from "@contexts/index";
+import HideValue from "@components/HideValue";
 
 type PropsBalance = {
   saldo: string;
@@ -30,7 +31,13 @@ const Balance = ({ saldo, gastos }: PropsBalance) => {
             {visibleValues ? (
               <BalanceText>R$ {saldo}</BalanceText>
             ) : (
-              <BalanceText>....</BalanceText>
+              <HideValue
+                width={8}
+                height={8}
+                backgroundColor="white"
+                marginTop={8}
+                marginLeft={2}
+              />
             )}
           </Content>
         </View>

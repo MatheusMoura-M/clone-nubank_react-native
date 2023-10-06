@@ -5,6 +5,7 @@ import { MotiView } from "moti";
 export const ClickableContainer = styled.TouchableOpacity``;
 
 export const Container = styled(MotiView)`
+  min-height: 101.5px;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 25px;

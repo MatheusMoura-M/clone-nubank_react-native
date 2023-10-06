@@ -4,6 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 export type DirectionVariant = "column" | "row";
 
 export type SizeAndPositionProps = {
+  position?: string;
   width?: number;
   height?: number;
   top?: number;
