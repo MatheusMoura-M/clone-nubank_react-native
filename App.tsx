@@ -1,5 +1,6 @@
+import "react-native-gesture-handler";
 import "react-native-reanimated";
-import { Image, StatusBar, View, useColorScheme } from "react-native";
+import { StatusBar, useColorScheme } from "react-native";
 
 import { ThemeProvider } from "styled-components";
 import themes from "./src/theme";
@@ -7,8 +8,8 @@ import themes from "./src/theme";
 import { LoadIndicator } from "@components/Loading";
 import handleFonts from "@utils/fonts";
 
-import Home from "@screens/Home";
 import { AuthProvider } from "@contexts/index";
+import Routes from "@routes/index";
 
 const App = () => {
   const fontsLoaded = handleFonts();
@@ -24,7 +25,7 @@ const App = () => {
           translucent
         />
 
-        {fontsLoaded ? <Home /> : <LoadIndicator />}
+        {fontsLoaded ? <Routes /> : <LoadIndicator />}
       </ThemeProvider>
     </AuthProvider>
   );

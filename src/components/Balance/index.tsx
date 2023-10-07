@@ -9,6 +9,7 @@ import {
 } from "./style";
 import { useAuth } from "@contexts/index";
 import HideValue from "@components/HideValue";
+import { useNavigation } from "@react-navigation/native";
 
 type PropsBalance = {
   saldo: string;
@@ -17,9 +18,14 @@ type PropsBalance = {
 
 const Balance = ({ saldo, gastos }: PropsBalance) => {
   const { visibleValues } = useAuth();
+  const navigation = useNavigation();
+
+  const handleTeste = () => {
+    navigation.navigate("teste");
+  };
 
   return (
-    <ClickableContainer>
+    <ClickableContainer onPress={handleTeste}>
       <Container
         from={{ rotateX: "-100deg", opacity: 0 }}
         animate={{ rotateX: "0deg", opacity: 1 }}
