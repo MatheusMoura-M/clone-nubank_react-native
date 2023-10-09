@@ -1,12 +1,14 @@
 import Header from "@components/Header";
 import { Container } from "./style";
 import { useNavigation } from "@react-navigation/native";
+import { HomeTesteScreenNavigationProp } from "src/@types";
+import { useAuth } from "@contexts/index";
 
 const Teste = () => {
-  const navigation = useNavigation();
+  const { navigation } = useAuth();
 
   const handleHome = () => {
-    navigation.navigate('home');
+    navigation.navigate("teste");
   };
 
   return (

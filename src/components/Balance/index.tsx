@@ -10,6 +10,7 @@ import {
 import { useAuth } from "@contexts/index";
 import HideValue from "@components/HideValue";
 import { useNavigation } from "@react-navigation/native";
+import { HomeTesteScreenNavigationProp } from "src/@types";
 
 type PropsBalance = {
   saldo: string;
@@ -17,8 +18,7 @@ type PropsBalance = {
 };
 
 const Balance = ({ saldo, gastos }: PropsBalance) => {
-  const { visibleValues } = useAuth();
-  const navigation = useNavigation();
+  const { visibleValues, navigation } = useAuth();
 
   const handleTeste = () => {
     navigation.navigate("teste");

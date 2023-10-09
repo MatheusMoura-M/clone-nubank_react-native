@@ -8,6 +8,8 @@ import {
 } from "react";
 
 import * as ImagePicker from "expo-image-picker";
+import { useNavigation } from "@react-navigation/native";
+import { HomeTesteScreenNavigationProp } from "src/@types";
 
 type AuthContextProps = {
   visibleValues: boolean;
@@ -23,6 +25,7 @@ type AuthContextProps = {
   currentInvoice: boolean;
   setCurrentInvoice: Dispatch<SetStateAction<boolean>>;
   handlePickImage: () => Promise<null>;
+  navigation: HomeTesteScreenNavigationProp;
 };
 
 export type ProviderProps = {
@@ -38,6 +41,9 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   const [isPressedInvite, setIsPressedInvite] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string>("");
   const [currentInvoice, setCurrentInvoice] = useState<boolean>(true);
+
+  // Navigation
+  const navigation = useNavigation<HomeTesteScreenNavigationProp>();
 
   const handlePickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -70,6 +76,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         currentInvoice,
         setCurrentInvoice,
         handlePickImage,
+        navigation,
       }}
     >
       {children}
