@@ -1,14 +1,12 @@
 import Header from "@components/Header";
 import { Container } from "./style";
-import { useNavigation } from "@react-navigation/native";
-import { HomeTesteScreenNavigationProp } from "src/@types";
 import { useAuth } from "@contexts/index";
 
-const Teste = () => {
+const Account = () => {
   const { navigation } = useAuth();
 
   const handleHome = () => {
-    navigation.navigate("teste");
+    navigation.navigate("home");
   };
 
   return (
@@ -18,4 +16,4 @@ const Teste = () => {
   );
 };
 
-export default Teste;
+export default Account;

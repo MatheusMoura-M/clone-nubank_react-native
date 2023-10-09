@@ -9,33 +9,38 @@ import PaymentAssistant from "@components/BoxPaymentAssistant";
 import { calculateBalance, calculateExpenses } from "@utils/calculateValues";
 import BoxLoans from "@components/BoxLoans";
 import BoxDiscovery from "@components/BoxDiscovery";
+import ActionsMenu from "@components/ActionsMenu";
+import { View } from "react-native";
 
 const Home = () => {
   return (
-    <Container>
-      <Header name={"Matheus Moura"} />
+    <View>
+      <Container>
+        <Header name={"Matheus Moura"} />
 
-      <Balance saldo={calculateBalance()} gastos={calculateExpenses()} />
+        <Balance saldo={calculateBalance()} gastos={calculateExpenses()} />
 
-      <Actions />
+        <Actions />
 
-      <BoxMyCards>
-        <BoxPhone height={20} width={16}>
-          <HorizontalLinePhone height={3} width={2} top={2.5} right={4} />
-        </BoxPhone>
-        <TitleMyCards>Meus cartões</TitleMyCards>
-      </BoxMyCards>
+        <BoxMyCards>
+          <BoxPhone height={20} width={16}>
+            <HorizontalLinePhone height={3} width={2} top={2.5} right={4} />
+          </BoxPhone>
+          <TitleMyCards>Meus cartões</TitleMyCards>
+        </BoxMyCards>
 
-      <BoxInfoScroll />
+        <BoxInfoScroll />
 
-      <BoxCreditCard />
+        <BoxCreditCard />
 
-      <PaymentAssistant />
+        <PaymentAssistant />
 
-      <BoxLoans />
+        <BoxLoans />
 
-      <BoxDiscovery />
-    </Container>
+        <BoxDiscovery />
+      </Container>
+      <ActionsMenu />
+    </View>
   );
 };
 

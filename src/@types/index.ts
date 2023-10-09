@@ -1,18 +1,18 @@
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "@routes/app.routes";
+import { RootStackParamList } from "@routes/index.routes";
 import { ReactNode } from "react";
 
 export type ProviderProps = {
   children: ReactNode;
 };
 
-export type HomeTesteScreenNavigationProp = StackNavigationProp<
+export type HomeAccountScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  "home" | "teste"
+  "home" | "account"
 >;
 
-export type HomeTesteScreenRouteProp = RouteProp<
+export type HomeAccountScreenRouteProp = RouteProp<
   RootStackParamList,
-  "home" | "teste"
+  "home" | "account"
 >;

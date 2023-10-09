@@ -1,21 +1,21 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "@screens/Home";
-import Teste from "@screens/Teste";
+import Account from "@screens/Account";
 
 export type RootStackParamList = {
   home: undefined;
-  teste: undefined;
+  account: undefined;
 };
 
 const { Navigator, Screen } = createStackNavigator<RootStackParamList>();
 
-const AppRoutes = () => {
+const Routes = () => {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
       <Screen name="home" component={Home} />
-      <Screen name="teste" component={Teste} />
+      <Screen name="account" component={Account} />
     </Navigator>
   );
 };
 
-export default AppRoutes;
+export default Routes;
