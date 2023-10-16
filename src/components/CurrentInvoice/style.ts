@@ -14,6 +14,11 @@ export const TextValue = styled.Text`
   color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};
 `;
 
+export const ContainerSpan = styled.View`
+  align-items: center;
+  flex-direction: row;
+`;
+
 export const SpanDueDate = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.LIGHT};
