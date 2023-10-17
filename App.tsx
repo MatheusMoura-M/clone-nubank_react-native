@@ -6,13 +6,21 @@ import handleFonts from "@utils/fonts";
 
 import Routes from "@routes/index.routes";
 import EncapsulateApp from "@utils/encapsulateApp";
+import ActionsMenu from "@components/ActionsMenu";
 
 const App = () => {
   const fontsLoaded = handleFonts();
 
   return (
     <EncapsulateApp>
-      {fontsLoaded ? <Routes /> : <LoadIndicator />}
+      {fontsLoaded ? (
+        <>
+          <Routes />
+          <ActionsMenu />
+        </>
+      ) : (
+        <LoadIndicator />
+      )}
     </EncapsulateApp>
   );
 };

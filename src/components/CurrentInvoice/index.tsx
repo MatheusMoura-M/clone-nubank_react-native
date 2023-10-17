@@ -1,5 +1,12 @@
 import { View } from "react-native";
-import { BoxButtons, Span, SpanDueDate, SubTitle, TextValue } from "./style";
+import {
+  BoxButtons,
+  Span,
+  SpanDueDate,
+  ContainerSpan,
+  SubTitle,
+  TextValue,
+} from "./style";
 import ButtonCreditCard from "@components/ButtonCreditCard";
 import { useAuth } from "@contexts/index";
 import HideValue from "@components/HideValue";
@@ -23,23 +30,24 @@ const CurrentInvoiceContainer = () => {
         />
       )}
 
-      <SpanDueDate>
-        Limite disponível de{" "}
+      <ContainerSpan>
+        <SpanDueDate>Limite disponível de: </SpanDueDate>
         {visibleValues ? (
           <SpanDueDate>R$ 769,99</SpanDueDate>
         ) : (
           <HideValue width={6} height={6} backgroundColor="gray" />
         )}
-      </SpanDueDate>
+      </ContainerSpan>
 
-      <SpanDueDate>
-        Limite adicional para Pix e boletos:{" "}
+      <ContainerSpan>
+        <SpanDueDate>Limite adicional para Pix e boletos: </SpanDueDate>
         {visibleValues ? (
           <Span>R$ 550,00</Span>
         ) : (
           <HideValue width={6} height={6} backgroundColor="gray" />
         )}
-      </SpanDueDate>
+      </ContainerSpan>
+
       <BoxButtons>
         <ButtonCreditCard
           width={117}

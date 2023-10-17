@@ -6,19 +6,26 @@ import { BoxPhone, HorizontalLinePhone } from "@components/Actions/style";
 import BoxInfoScroll from "@components/BoxInfoScroll";
 import BoxCreditCard from "@components/BoxCreditCard";
 import PaymentAssistant from "@components/BoxPaymentAssistant";
-import { calculateBalance, calculateExpenses } from "@utils/calculateValues";
+import { calculateBalance } from "@utils/calculateValues";
 import BoxLoans from "@components/BoxLoans";
 import BoxDiscovery from "@components/BoxDiscovery";
-import ActionsMenu from "@components/ActionsMenu";
 import { View } from "react-native";
+import { useAuth } from "@contexts/index";
+import { useFocusEffect } from "@react-navigation/native";
 
 const Home = () => {
+  const { handleButtonHomePage } = useAuth();
+
+  useFocusEffect(() => {
+    handleButtonHomePage();
+  });
+
   return (
     <View>
       <Container>
         <Header name={"Matheus Moura"} />
 
-        <Balance saldo={calculateBalance()} gastos={calculateExpenses()} />
+        <Balance saldo={calculateBalance()} />
 
         <Actions />
 
@@ -39,7 +46,7 @@ const Home = () => {
 
         <BoxDiscovery />
       </Container>
-      <ActionsMenu />
+      {/* <ActionsMenu visibleComponent /> */}
     </View>
   );
 };

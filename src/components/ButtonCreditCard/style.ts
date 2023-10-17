@@ -1,5 +1,7 @@
 import styled from "styled-components/native";
 import { SizeAndPositionProps } from "@screens/Home/style";
+import { Ionicons } from "@expo/vector-icons";
+import { IconContainerProps } from "@components/ActionsMenu/style";
 
 export type BackgroundVariant = "red" | "gray";
 
@@ -28,4 +30,22 @@ export const ButtonText = styled.Text<TextButtonProps>`
   color: ${({ fixedColor, theme }) =>
     fixedColor ? theme.COLORS.WHITE : theme.COLORS.BLACKTOGGLE};
   text-align: center;
+`;
+
+// In ActionsMenu
+export const ArrowRightIconMenu = styled(Ionicons).attrs(
+  {}
+)<IconContainerProps>`
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  transform: rotateZ(180deg);
+  color: ${({ condition, deviceTheme, theme }) =>
+    condition
+      ? deviceTheme == "dark"
+        ? "#b575e0f9"
+        : theme.COLORS.PURPLE_DARK
+      : deviceTheme == "dark"
+      ? "#8c939895"
+      : theme.COLORS.GRAY_400};
 `;

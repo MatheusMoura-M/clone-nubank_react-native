@@ -12,18 +12,19 @@ import HideValue from "@components/HideValue";
 
 type PropsBalance = {
   saldo: string;
-  gastos: string;
 };
 
-const Balance = ({ saldo, gastos }: PropsBalance) => {
-  const { visibleValues, navigation } = useAuth();
+const Balance = ({ saldo }: PropsBalance) => {
+  const { visibleValues, navigation, setVisibleComponent } = useAuth();
 
-  const handleTeste = () => {
+  const handleAccount = () => {
     navigation.navigate("account");
+
+    setVisibleComponent(false);
   };
 
   return (
-    <ClickableContainer onPress={handleTeste}>
+    <ClickableContainer onPress={handleAccount}>
       <Container
         from={{ rotateX: "-100deg", opacity: 0 }}
         animate={{ rotateX: "0deg", opacity: 1 }}

@@ -1,5 +1,8 @@
 import styled from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Dimensions } from "react-native";
+
+const screenHeight = Dimensions.get("screen").height;
 
 export type DirectionVariant = "column" | "row";
 
@@ -22,6 +25,7 @@ export type MarginProps = {
 };
 
 export const Container = styled.ScrollView`
+  min-height: ${screenHeight}px;
   background-color: ${({ theme }) => theme.COLORS.WHITETOGGLE};
 `;
 

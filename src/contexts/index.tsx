@@ -9,7 +9,7 @@ import {
 
 import * as ImagePicker from "expo-image-picker";
 import { useNavigation } from "@react-navigation/native";
-import { HomeTesteScreenNavigationProp } from "src/@types";
+import { ScreenNavigationProp } from "src/@types";
 
 type AuthContextProps = {
   visibleValues: boolean;
@@ -25,7 +25,18 @@ type AuthContextProps = {
   currentInvoice: boolean;
   setCurrentInvoice: Dispatch<SetStateAction<boolean>>;
   handlePickImage: () => Promise<null>;
-  navigation: HomeTesteScreenNavigationProp;
+  navigation: ScreenNavigationProp;
+  homePageActivated: boolean;
+  setHomePageActivated: Dispatch<SetStateAction<boolean>>;
+  moneyPageActivated: boolean;
+  setMoneyPageActivated: Dispatch<SetStateAction<boolean>>;
+  shoppingPageActivated: boolean;
+  setShoppingPageActivated: Dispatch<SetStateAction<boolean>>;
+  handleButtonHomePage: () => void;
+  handleButtonMoneyPage: () => void;
+  handleButtonShoppingPage: () => void;
+  visibleComponent: boolean;
+  setVisibleComponent: Dispatch<SetStateAction<boolean>>;
 };
 
 export type ProviderProps = {
@@ -42,8 +53,15 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   const [selectedImage, setSelectedImage] = useState<string>("");
   const [currentInvoice, setCurrentInvoice] = useState<boolean>(true);
 
+  const [homePageActivated, setHomePageActivated] = useState<boolean>(true);
+  const [moneyPageActivated, setMoneyPageActivated] = useState<boolean>(false);
+  const [shoppingPageActivated, setShoppingPageActivated] =
+    useState<boolean>(false);
+
+  const [visibleComponent, setVisibleComponent] = useState<boolean>(false);
+
   // Navigation
-  const navigation = useNavigation<HomeTesteScreenNavigationProp>();
+  const navigation = useNavigation<ScreenNavigationProp>();
 
   const handlePickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -58,6 +76,33 @@ export const AuthProvider = ({ children }: ProviderProps) => {
     }
 
     return null;
+  };
+
+  const handleButtonHomePage = () => {
+    setMoneyPageActivated(false);
+    setShoppingPageActivated(false);
+    setHomePageActivated(true);
+
+    navigation.navigate("home");
+    setVisibleComponent(true);
+  };
+
+  const handleButtonMoneyPage = () => {
+    setHomePageActivated(false);
+    setShoppingPageActivated(false);
+    setMoneyPageActivated(true);
+
+    navigation.navigate("investments");
+    setVisibleComponent(true);
+  };
+
+  const handleButtonShoppingPage = () => {
+    setHomePageActivated(false);
+    setMoneyPageActivated(false);
+    setShoppingPageActivated(true);
+
+    navigation.navigate("shopping");
+    setVisibleComponent(true);
   };
 
   return (
@@ -77,6 +122,17 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         setCurrentInvoice,
         handlePickImage,
         navigation,
+        handleButtonHomePage,
+        handleButtonMoneyPage,
+        handleButtonShoppingPage,
+        homePageActivated,
+        setHomePageActivated,
+        moneyPageActivated,
+        setMoneyPageActivated,
+        shoppingPageActivated,
+        setShoppingPageActivated,
+        setVisibleComponent,
+        visibleComponent,
       }}
     >
       {children}
