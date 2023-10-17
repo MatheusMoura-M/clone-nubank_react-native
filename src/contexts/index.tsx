@@ -32,7 +32,7 @@ type AuthContextProps = {
   setMoneyPageActivated: Dispatch<SetStateAction<boolean>>;
   shoppingPageActivated: boolean;
   setShoppingPageActivated: Dispatch<SetStateAction<boolean>>;
-  handleButtonHomePage: () => void;
+  handleButtonHomePage: (toBrowse?: boolean) => void;
   handleButtonMoneyPage: () => void;
   handleButtonShoppingPage: () => void;
   visibleComponent: boolean;
@@ -63,28 +63,14 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   // Navigation
   const navigation = useNavigation<ScreenNavigationProp>();
 
-  const handlePickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      aspect: [4, 4],
-      allowsEditing: true,
-      base64: true,
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      setSelectedImage(result.assets[0].uri);
-    }
-
-    return null;
-  };
-
-  const handleButtonHomePage = () => {
+  const handleButtonHomePage = (toBrowse: boolean = true) => {
     setMoneyPageActivated(false);
     setShoppingPageActivated(false);
     setHomePageActivated(true);
 
-    navigation.navigate("home");
     setVisibleComponent(true);
+
+    toBrowse && navigation.navigate("home");
   };
 
   const handleButtonMoneyPage = () => {
@@ -103,6 +89,21 @@ export const AuthProvider = ({ children }: ProviderProps) => {
 
     navigation.navigate("shopping");
     setVisibleComponent(true);
+  };
+
+  const handlePickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      aspect: [4, 4],
+      allowsEditing: true,
+      base64: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    }
+
+    return null;
   };
 
   return (

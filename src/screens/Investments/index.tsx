@@ -1,8 +1,17 @@
 import Header from "@components/Header";
-import { Title } from "./style";
+import {
+  BoxText,
+  ContainerTitle,
+  Content,
+  SpanMoney,
+  Text,
+  Title,
+} from "./style";
 import { useAuth } from "@contexts/index";
 import { Container } from "@screens/Home/style";
 import { useFocusEffect } from "@react-navigation/native";
+import ButtonDiscovery from "@components/ButtonDiscovery";
+import BoxMyOrganization from "@components/BoxMyOrganization";
 
 const Investments = () => {
   const { handleButtonHomePage, handleButtonMoneyPage } = useAuth();
@@ -18,7 +27,25 @@ const Investments = () => {
   return (
     <Container>
       <Header name={"Matheus Moura"} />
-      <Title onPress={handleHome}>Investments Page</Title>
+      <ContainerTitle>
+        <Title onPress={handleHome}>Total em investimentos</Title>
+        <SpanMoney>R$ 0,00</SpanMoney>
+
+        <ButtonDiscovery
+          width={88}
+          height={40}
+          marginTop={15}
+          text="Investir"
+        />
+      </ContainerTitle>
+      <Content>
+        <BoxText>
+          <Text>Minha organização</Text>
+          <Text borderLeftActive>Análise da distribuição</Text>
+        </BoxText>
+
+        <BoxMyOrganization />
+      </Content>
     </Container>
   );
 };

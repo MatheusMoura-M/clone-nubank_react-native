@@ -18,7 +18,6 @@ import {
   ButtonOpacityEye,
 } from "./style";
 
-import * as ImagePicker from "expo-image-picker";
 import ImageViewer from "@components/ImageViewer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -27,9 +26,10 @@ import { useAuth } from "@contexts/index";
 
 type PropsHeader = {
   name: string;
+  shortHeader?: boolean;
 };
 
-const Header = ({ name }: PropsHeader) => {
+const Header = ({ name, shortHeader = true }: PropsHeader) => {
   const {
     isPressedEye,
     setIsPressedEye,
@@ -48,7 +48,7 @@ const Header = ({ name }: PropsHeader) => {
     : 64;
 
   return (
-    <Container statusBarHeight={statusBarHeight}>
+    <Container statusBarHeight={statusBarHeight} shortHeader={shortHeader}>
       <Content
         from={{ translateY: -150, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
@@ -59,13 +59,15 @@ const Header = ({ name }: PropsHeader) => {
             <ImageViewer selectedImage={selectedImage} />
           </ButtonUser>
 
-          <Username
-            from={{ translateX: -300 }}
-            animate={{ translateX: 0 }}
-            transition={{ type: "timing", duration: 800, delay: 800 }}
-          >
-            <Text>Olá, {name.split(" ")[0]}</Text>
-          </Username>
+          {!shortHeader && (
+            <Username
+              from={{ translateX: -300 }}
+              animate={{ translateX: 0 }}
+              transition={{ type: "timing", duration: 800, delay: 800 }}
+            >
+              <Text>Olá, {name.split(" ")[0]}</Text>
+            </Username>
+          )}
         </BoxStart>
 
         <BoxEnd>
