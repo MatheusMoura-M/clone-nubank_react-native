@@ -1,14 +1,14 @@
 import styled from "styled-components/native";
 
 export const Title = styled.Text`
-  font-size: 18px;
+  width: 170px;
   margin: 14px;
-  color: white;
+  padding: 5px;
   border-width: 1px;
   border-color: gray;
-  width: 150px;
-  text-align: center;
-  padding: 5px;
-  background-color: gray;
   border-radius: 5px;
+  background-color: gray;
+  color: white;
+  font-size: 18px;
+  text-align: center;
 `;

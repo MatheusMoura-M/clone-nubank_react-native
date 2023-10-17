@@ -12,47 +12,33 @@ import {
 import { useColorScheme } from "react-native";
 import { DollarSignIconMenu } from "@components/BoxLoans/style";
 import { ArrowRightIconMenu } from "@components/ButtonCreditCard/style";
+import { useAuth } from "@contexts/index";
 
 const ActionsMenu = () => {
+  const {
+    handleButtonHomePage,
+    handleButtonMoneyPage,
+    handleButtonShoppingPage,
+    homePageActivated,
+    moneyPageActivated,
+    shoppingPageActivated,
+    visibleComponent,
+  } = useAuth();
   const deviceTheme = useColorScheme();
-
-  const [homePageActivated, setHomePageActivated] = useState<boolean>(true);
-  const [moneyPageActivated, setMoneyPageActivated] = useState<boolean>(false);
-  const [shoppingPageActivated, setShoppingPageActivated] =
-    useState<boolean>(false);
-
-  const handleButtonHomePage = () => {
-    setMoneyPageActivated(false);
-    setShoppingPageActivated(false);
-    setHomePageActivated(true);
-  };
-
-  const handleButtonMoneyPage = () => {
-    setHomePageActivated(false);
-    setShoppingPageActivated(false);
-    setMoneyPageActivated(true);
-  };
-
-  const handleButtonShoppingPage = () => {
-    setHomePageActivated(false);
-    setMoneyPageActivated(false);
-    setShoppingPageActivated(true);
-  };
 
   return (
     <BlurView
       intensity={deviceTheme == "dark" ? 5 : 25}
       style={{
+        display: visibleComponent ? "flex" : "none",
         position: "absolute",
         bottom: 10,
         left: 148,
         backgroundColor: deviceTheme == "dark" ? "#000000e4" : "#ffffffc9",
-        // backgroundColor:"#b989daf8",
         height: 65,
         width: 205,
         borderRadius: 40,
         elevation: 1.5,
-        zIndex: 1,
         overflow: "hidden",
       }}
     >

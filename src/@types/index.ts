@@ -7,12 +7,12 @@ export type ProviderProps = {
   children: ReactNode;
 };
 
-export type HomeAccountScreenNavigationProp = StackNavigationProp<
+export type ScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  "home" | "account"
+  "home" | "account" | "investments" | "shopping"
 >;
 
-export type HomeAccountScreenRouteProp = RouteProp<
+export type ScreenRouteProp = RouteProp<
   RootStackParamList,
-  "home" | "account"
+  "home" | "account" | "investments" | "shopping"
 >;
