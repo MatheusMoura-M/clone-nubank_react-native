@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MotiView } from "moti";
+import { SizeAndPositionProps } from "@screens/Home/style";
 
 export const ClickableContainer = styled.TouchableOpacity``;
 
@@ -37,4 +38,10 @@ export const IconMaterialIconsBalance = styled(MaterialIcons).attrs(
   ({ theme }) => ({
     color: theme.COLORS.GRAY_400,
   })
-)``;
+)<SizeAndPositionProps>`
+  position: ${({ position }) => (position ? position : "relative")};
+  top: ${({ top }) => top && top}px;
+  bottom: ${({ bottom }) => bottom && bottom}px;
+  left: ${({ left }) => left && left}px;
+  right: ${({ right }) => right && right}px;
+`;

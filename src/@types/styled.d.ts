@@ -9,9 +9,10 @@ export type ThemeType = {
     WHITETOGGLE: string;
     BLACKTOGGLE: string;
     PURPLE: string;
-    PURPLE_DARK_TEXT: string;
-    PURPLE_LIGHT: string;
     PURPLE_DARK: string;
+    PURPLE_LIGHT: string;
+    PURPLE_DARK_TEXT: string;
+    PURPLE_DARK_TEXT_2: string;
     GRAY_700: string;
     GRAY_600: string;
     GRAY_500: string;

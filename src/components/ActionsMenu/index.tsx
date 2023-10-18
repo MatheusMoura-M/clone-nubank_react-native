@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BlurView } from "expo-blur";
 import {
   ArrowLeftIconMenu,
@@ -47,7 +46,7 @@ const ActionsMenu = () => {
           deviceTheme={deviceTheme}
           condition={homePageActivated}
           activeOpacity={1}
-          onPress={handleButtonHomePage}
+          onPress={() => handleButtonHomePage()}
         >
           <ArrowLeftIconMenu
             name="arrow-up-sharp"
