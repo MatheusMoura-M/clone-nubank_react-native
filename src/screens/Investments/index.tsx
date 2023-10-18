@@ -6,6 +6,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import BoxMyOrganization from "@components/BoxMyOrganization";
 import ContainerInvestmentMyOrganization from "@components/ContainerInvestmentMyOrganization";
 import { useState } from "react";
+import BoxDistributionAnalysis from "@components/BoxDistributionAnalysis";
 
 type handleComponentRenderingProps = {
   myOrganizationActive: boolean;
@@ -38,7 +39,10 @@ const Investments = () => {
   return (
     <Container>
       <Header name={"Matheus Moura"} />
-      <ContainerInvestmentMyOrganization />
+      <ContainerInvestmentMyOrganization
+        buttonText="Investir"
+        buttonWidth={88}
+      />
       <Content>
         <BoxText>
           <Text
@@ -58,7 +62,11 @@ const Investments = () => {
           </Text>
         </BoxText>
 
-        <BoxMyOrganization />
+        {myOrganizationVisible ? (
+          <BoxMyOrganization />
+        ) : (
+          <BoxDistributionAnalysis />
+        )}
       </Content>
     </Container>
   );

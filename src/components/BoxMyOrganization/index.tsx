@@ -49,7 +49,11 @@ const BoxMyOrganization = () => {
       </FirstContainer>
 
       <SecondContainer>
-        <ContainerInvestmentMyOrganization borderActive>
+        <ContainerInvestmentMyOrganization
+          borderActive
+          buttonText="Comprar"
+          buttonWidth={98}
+        >
           <IconMaterialIconsBalance
             name="keyboard-arrow-right"
             size={24}
