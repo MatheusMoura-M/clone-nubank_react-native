@@ -7,6 +7,7 @@ type ContainerInvestmentProps = {
   borderActive?: boolean;
   buttonText: string;
   buttonWidth: number;
+  title: string;
 };
 
 const ContainerInvestmentMyOrganization = ({
@@ -14,10 +15,11 @@ const ContainerInvestmentMyOrganization = ({
   children,
   buttonText,
   buttonWidth,
+  title,
 }: ContainerInvestmentProps) => {
   return (
     <ContainerTitle borderActive={borderActive}>
-      <Title>Total em investimentos</Title>
+      <Title>{title}</Title>
       <SpanMoney>R$ 0,00</SpanMoney>
 
       <ButtonDiscovery

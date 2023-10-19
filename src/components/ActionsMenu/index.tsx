@@ -8,7 +8,6 @@ import {
   EmptyPart,
   IconContainer,
 } from "./style";
-import { useColorScheme } from "react-native";
 import { DollarSignIconMenu } from "@components/BoxLoans/style";
 import { ArrowRightIconMenu } from "@components/ButtonCreditCard/style";
 import { useAuth } from "@contexts/index";
@@ -22,8 +21,8 @@ const ActionsMenu = () => {
     moneyPageActivated,
     shoppingPageActivated,
     visibleComponent,
+    deviceTheme,
   } = useAuth();
-  const deviceTheme = useColorScheme();
 
   return (
     <BlurView

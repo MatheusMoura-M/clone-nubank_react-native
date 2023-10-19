@@ -38,7 +38,6 @@ export const AreaButton = styled.View<AreaButtonProps>`
 
 export const LabelButton = styled.Text<MarginProps>`
   margin-top: 9px;
-  margin-top: 9px;
   text-align: center;
   font-family: ${({ theme }) => theme.FONT_FAMILY.GRAPHIK.MEDIUM};
   color: ${({ theme }) => theme.COLORS.BLACKTOGGLE};

@@ -13,13 +13,16 @@ import {
 import ButtonDiscovery from "@components/ButtonDiscovery";
 import { IconMaterialIconsBalance } from "@components/Balance/style";
 import ContainerInvestmentMyOrganization from "@components/ContainerInvestmentMyOrganization";
+import { useAuth } from "@contexts/index";
 
 const BoxMyOrganization = () => {
+  const { deviceTheme } = useAuth();
+
   return (
     <ContainerMain>
       <FirstContainer>
         <View>
-          <PurpleBox>
+          <PurpleBox deviceTheme={deviceTheme!}>
             <TextFirstContainer>Investi-</TextFirstContainer>
             <SpanFirstContainer>mentos</SpanFirstContainer>
           </PurpleBox>
@@ -33,7 +36,7 @@ const BoxMyOrganization = () => {
           />
         </View>
         <View>
-          <PurpleBox>
+          <PurpleBox deviceTheme={deviceTheme!}>
             <TextFirstContainer>Caixi-</TextFirstContainer>
             <SpanFirstContainer>nhas</SpanFirstContainer>
           </PurpleBox>
@@ -50,6 +53,7 @@ const BoxMyOrganization = () => {
 
       <SecondContainer>
         <ContainerInvestmentMyOrganization
+          title="Total em criptos"
           borderActive
           buttonText="Comprar"
           buttonWidth={98}
@@ -65,10 +69,10 @@ const BoxMyOrganization = () => {
       </SecondContainer>
 
       <ThirdContainer>
-        <TextThirdContainer>
+        <TextThirdContainer deviceTheme={deviceTheme!}>
           Seus seguros estão em outro lugar
         </TextThirdContainer>
-        <SpanThirdContainer>
+        <SpanThirdContainer deviceTheme={deviceTheme!}>
           Estamos de mudança! Para encontrar a Área de Seguros, acesse o seu
           perfil. Fica bem ali no alto da tela, no canto esquerdo.
         </SpanThirdContainer>

@@ -8,7 +8,7 @@ export default {
     PURPLE_DARK: "#820ad1",
     PURPLE_LIGHT: "#a335ec",
     PURPLE_DARK_TEXT: "#a335ec",
-    PURPLE_DARK_TEXT_2: "#bb70ee",
+    PURPLE_DARK_TEXT_2: "#7611b9",
     GRAY_700: "#1B1D1E",
     GRAY_600: "#333638",
     GRAY_500: "#B9BBBC",

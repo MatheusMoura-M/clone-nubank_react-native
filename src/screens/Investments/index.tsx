@@ -13,7 +13,7 @@ type handleComponentRenderingProps = {
 };
 
 const Investments = () => {
-  const { handleButtonMoneyPage } = useAuth();
+  const { handleButtonMoneyPage, deviceTheme } = useAuth();
 
   const [distributionAnalysisVisible, setDistributionAnalysisVisible] =
     useState<boolean>(false);
@@ -40,12 +40,14 @@ const Investments = () => {
     <Container>
       <Header name={"Matheus Moura"} />
       <ContainerInvestmentMyOrganization
+        title="Total em investimentos"
         buttonText="Investir"
         buttonWidth={88}
       />
       <Content>
         <BoxText>
           <Text
+            deviceTheme={deviceTheme!}
             onPress={() =>
               handleComponentRendering({ myOrganizationActive: true })
             }

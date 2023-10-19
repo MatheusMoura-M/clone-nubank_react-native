@@ -10,6 +10,7 @@ import {
 import * as ImagePicker from "expo-image-picker";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenNavigationProp } from "src/@types";
+import { ColorSchemeName, useColorScheme } from "react-native";
 
 type AuthContextProps = {
   visibleValues: boolean;
@@ -37,6 +38,7 @@ type AuthContextProps = {
   handleButtonShoppingPage: () => void;
   visibleComponent: boolean;
   setVisibleComponent: Dispatch<SetStateAction<boolean>>;
+  deviceTheme: ColorSchemeName;
 };
 
 export type ProviderProps = {
@@ -62,6 +64,8 @@ export const AuthProvider = ({ children }: ProviderProps) => {
 
   // Navigation
   const navigation = useNavigation<ScreenNavigationProp>();
+
+  const deviceTheme = useColorScheme();
 
   const handleButtonHomePage = (toBrowse: boolean = true) => {
     setMoneyPageActivated(false);
@@ -134,6 +138,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         setShoppingPageActivated,
         setVisibleComponent,
         visibleComponent,
+        deviceTheme,
       }}
     >
       {children}
