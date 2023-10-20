@@ -22,13 +22,14 @@ import {
   TopLeftView,
   TopRightView,
 } from "./style";
-import { Image, useColorScheme } from "react-native";
+import { Image } from "react-native";
 import { IconFontAwesome5 } from "@components/AllInfoBox/style";
 import { IconMaterialIcons } from "@screens/Home/style";
 import { Fontisto } from "@expo/vector-icons";
+import { useAuth } from "@contexts/index";
 
 const Actions = () => {
-  const deviceTheme = useColorScheme();
+  const { deviceTheme } = useAuth();
 
   return (
     <Container horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -133,7 +134,7 @@ const Actions = () => {
 
       <ActionButton marginRight={55}>
         <AreaButton>
-          {deviceTheme == "dark" ? (
+          {deviceTheme === "dark" ? (
             <Fontisto name="world-o" size={24} color="white" />
           ) : (
             <Image
@@ -143,7 +144,7 @@ const Actions = () => {
           )}
           <IconFontAwesome name="arrow-up" size={11} bottom={22} right={23.2} />
         </AreaButton>
-        <LabelButton>Ultimo</LabelButton>
+        <LabelButtonRecharge>Transferir Internac.</LabelButtonRecharge>
       </ActionButton>
     </Container>
   );

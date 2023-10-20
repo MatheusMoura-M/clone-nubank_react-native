@@ -10,6 +10,7 @@ import {
 import * as ImagePicker from "expo-image-picker";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenNavigationProp } from "src/@types";
+import { ColorSchemeName, useColorScheme } from "react-native";
 
 type AuthContextProps = {
   visibleValues: boolean;
@@ -32,11 +33,12 @@ type AuthContextProps = {
   setMoneyPageActivated: Dispatch<SetStateAction<boolean>>;
   shoppingPageActivated: boolean;
   setShoppingPageActivated: Dispatch<SetStateAction<boolean>>;
-  handleButtonHomePage: () => void;
+  handleButtonHomePage: (toBrowse?: boolean) => void;
   handleButtonMoneyPage: () => void;
   handleButtonShoppingPage: () => void;
   visibleComponent: boolean;
   setVisibleComponent: Dispatch<SetStateAction<boolean>>;
+  deviceTheme: ColorSchemeName;
 };
 
 export type ProviderProps = {
@@ -63,28 +65,16 @@ export const AuthProvider = ({ children }: ProviderProps) => {
   // Navigation
   const navigation = useNavigation<ScreenNavigationProp>();
 
-  const handlePickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      aspect: [4, 4],
-      allowsEditing: true,
-      base64: true,
-      quality: 1,
-    });
+  const deviceTheme = useColorScheme();
 
-    if (!result.canceled) {
-      setSelectedImage(result.assets[0].uri);
-    }
-
-    return null;
-  };
-
-  const handleButtonHomePage = () => {
+  const handleButtonHomePage = (toBrowse: boolean = true) => {
     setMoneyPageActivated(false);
     setShoppingPageActivated(false);
     setHomePageActivated(true);
 
-    navigation.navigate("home");
     setVisibleComponent(true);
+
+    toBrowse && navigation.navigate("home");
   };
 
   const handleButtonMoneyPage = () => {
@@ -103,6 +93,21 @@ export const AuthProvider = ({ children }: ProviderProps) => {
 
     navigation.navigate("shopping");
     setVisibleComponent(true);
+  };
+
+  const handlePickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      aspect: [4, 4],
+      allowsEditing: true,
+      base64: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    }
+
+    return null;
   };
 
   return (
@@ -133,6 +138,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         setShoppingPageActivated,
         setVisibleComponent,
         visibleComponent,
+        deviceTheme,
       }}
     >
       {children}

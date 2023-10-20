@@ -4,6 +4,7 @@ import { SizeAndPositionProps } from "@screens/Home/style";
 
 type ContainerProps = {
   statusBarHeight: number;
+  shortHeader: boolean;
 };
 
 type IconContainerProps = SizeAndPositionProps & {
@@ -33,7 +34,7 @@ type ButtonEyeProps = SizeAndPositionProps & {
 export const Container = styled.View<ContainerProps>`
   background-color: ${({ theme }) => theme.COLORS.PURPLE_DARK};
   padding-top: ${({ statusBarHeight }) => statusBarHeight - 10}px;
-  height: 190px;
+  height: ${({ shortHeader }) => (shortHeader ? 120 : 190)}px;
 `;
 
 export const Content = styled(MotiView)`

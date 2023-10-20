@@ -17,13 +17,13 @@ const Home = () => {
   const { handleButtonHomePage } = useAuth();
 
   useFocusEffect(() => {
-    handleButtonHomePage();
+    handleButtonHomePage(false);
   });
 
   return (
     <View>
       <Container>
-        <Header name={"Matheus Moura"} />
+        <Header name={"Matheus Moura"} shortHeader={false} />
 
         <Balance saldo={calculateBalance()} />
 
@@ -46,7 +46,6 @@ const Home = () => {
 
         <BoxDiscovery />
       </Container>
-      {/* <ActionsMenu visibleComponent /> */}
     </View>
   );
 };
