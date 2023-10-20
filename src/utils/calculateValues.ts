@@ -1,9 +1,3 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import Header from "../../components/Header";
-import Balance from "../../components/Balance";
-import Movements from "../../components/Movements";
-import Actions from "../../components/Actions";
-
 const list = [
   {
     id: 1,
@@ -39,7 +33,7 @@ const calculateBalance = () => {
   let total = 0;
   list.map((item) => {
     if (item.type === 1) {
-      numberFormated = parseFloat(
+      const numberFormated = parseFloat(
         item.value.replace(/\./g, "").replace(",", ".")
       );
       total += numberFormated;
@@ -61,7 +55,7 @@ const calculateExpenses = () => {
   let total = 0;
   list.map((item) => {
     if (item.type === 0) {
-      numberFormated = parseFloat(
+      const numberFormated = parseFloat(
         item.value.replace(/\./g, "").replace(",", ".")
       );
       total += numberFormated;
@@ -76,43 +70,7 @@ const calculateExpenses = () => {
     .replace("R$", "")
     .trim();
 
-  console.log(stringFormated);
-
   return stringFormated;
 };
 
-export default Home = () => {
-  return (
-    <View style={styles.container}>
-      <Header name={"Matheus Moura"} />
-
-      <Balance saldo={calculateBalance()} gastos={calculateExpenses()} />
-
-      <Actions />
-
-      <Text style={styles.title}>Últimas movimentações</Text>
-      <FlatList
-        style={styles.list}
-        data={list}
-        keyExtractor={(item) => String(item.id)}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <Movements data={item} />}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fafafa",
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    margin: 14,
-  },
-  list: {
-    marginHorizontal: 14,
-  },
-});
+export { calculateBalance, calculateExpenses };
